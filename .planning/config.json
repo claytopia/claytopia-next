@@ -1,0 +1,18 @@
+{
+  "workflow": {
+    "mode": "yolo",
+    "depth": "standard",
+    "checkpoints": {
+      "require_approval": false,
+      "pause_on_error": true
+    }
+  },
+  "parallelization": {
+    "enabled": true,
+    "max_concurrent_agents": 3,
+    "skip_checkpoints": true,
+    "min_plans_for_parallel": 2
+  },
+  "created": "2026-01-16",
+  "version": "1.0"
+}
