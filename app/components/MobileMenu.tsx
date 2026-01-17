@@ -67,7 +67,7 @@ export function MobileMenu() {
           <div className="fixed inset-0 z-40">
             {/* Backdrop overlay */}
             <div
-              className="absolute inset-0 bg-foreground/30 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/40"
               onClick={closeMenu}
               aria-hidden="true"
             />
