@@ -10,6 +10,22 @@ This is a migration from the existing static HTML/CSS/JS site (claytopia.github.
 
 **Make visitors want to become part of the Claytopia community** - whether that's joining Clay Club, using the firing service, or booking a workshop. The site should inspire and make reaching out effortless.
 
+## Current Milestone: v1.0 Homepage & Foundation
+
+**Goal:** Build the homepage and establish design/technical foundation for the full site.
+
+**Target features:**
+- Homepage with hero, 4 offering sections (full visual sections with teasers), CTA, footer
+- Hamburger menu navigation (mobile-first)
+- Design system: earthy tones, warm/authentic feel, responsive
+- Technical foundation: image optimization, SEO, Schema.org, cookie banner
+
+**Design decisions:**
+- Full sections for each offering (not cards) with teaser text and links to subpages
+- Hamburger menu for navigation
+- Minimal footer (contact, address, quick links only)
+- Basic analytics requiring DSGVO cookie consent
+
 ## Requirements
 
 ### Validated
@@ -79,4 +95,4 @@ This is a migration from the existing static HTML/CSS/JS site (claytopia.github.
 | Vercel deployment | Natural fit for Next.js, easy CI/CD | — Pending |
 
 ---
-*Last updated: 2026-01-16 after initialization*
+*Last updated: 2026-01-17 after v1.0 milestone planning*
