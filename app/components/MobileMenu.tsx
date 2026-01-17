@@ -82,17 +82,17 @@ export function MobileMenu() {
             {/* Slide-out panel */}
             <div
               className="absolute right-0 top-0 bottom-0 w-80 max-w-[calc(100%-3rem)] shadow-2xl"
-              style={{ backgroundColor: '#e8ebe3', height: '100vh' }}
+              style={{ backgroundColor: 'var(--sage-50)', height: '100vh' }}
             >
               <nav
                 className="relative h-full flex flex-col"
                 role="dialog"
                 aria-modal="true"
                 aria-label="Navigation"
-                style={{ backgroundColor: '#e8ebe3' }}
+                style={{ backgroundColor: 'var(--sage-50)' }}
               >
                 {/* Panel header with close button */}
-                <div className="h-16 flex-shrink-0 flex items-center justify-end px-4" style={{ backgroundColor: '#e8ebe3' }}>
+                <div className="h-16 flex-shrink-0 flex items-center justify-end px-4" style={{ backgroundColor: 'var(--sage-50)' }}>
                   <button
                     type="button"
                     onClick={closeMenu}
@@ -112,7 +112,7 @@ export function MobileMenu() {
                 </div>
 
                 {/* Navigation links */}
-                <ul className="flex-1 px-6 py-4" style={{ backgroundColor: '#e8ebe3' }}>
+                <ul className="flex-1 px-6 py-4" style={{ backgroundColor: 'var(--sage-50)' }}>
                   {navItems.map((item) => (
                     <li key={item.href}>
                       <a
@@ -130,7 +130,7 @@ export function MobileMenu() {
                 </ul>
 
                 {/* Bottom section - contact info */}
-                <div className="flex-shrink-0 px-6 pb-8" style={{ backgroundColor: '#e8ebe3' }}>
+                <div className="flex-shrink-0 px-6 pb-8" style={{ backgroundColor: 'var(--sage-50)' }}>
                   <div className="border-t border-foreground/10 pt-6">
                     <p className="text-xs font-medium uppercase tracking-wider text-foreground-muted mb-3">
                       Kontakt
