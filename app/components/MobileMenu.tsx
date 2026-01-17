@@ -74,8 +74,8 @@ export function MobileMenu() {
 
             {/* Slide-out panel */}
             <div
-              className="absolute right-0 top-0 h-full w-80 max-w-[calc(100%-3rem)] shadow-2xl"
-              style={{ backgroundColor: '#e8ebe3' }}
+              className="absolute right-0 top-0 bottom-0 w-80 max-w-[calc(100%-3rem)] shadow-2xl"
+              style={{ backgroundColor: '#e8ebe3', height: '100vh' }}
             >
               <nav
                 className="relative h-full flex flex-col"
