@@ -75,13 +75,13 @@ export function MobileMenu() {
             {/* Slide-out panel - solid opaque background */}
             <nav
               className="absolute right-0 top-0 h-full w-80 max-w-[calc(100%-3rem)]
-                         bg-sage-50 shadow-2xl border-l border-foreground/10
+                         shadow-2xl border-l border-foreground/10
                          transform transition-transform duration-300 ease-out
                          flex flex-col"
               role="dialog"
               aria-modal="true"
               aria-label="Navigation"
-              style={{ backgroundColor: 'oklch(0.96 0.02 130)' }}
+              style={{ backgroundColor: '#e8ebe3' }}
             >
               {/* Panel header */}
               <div className="h-16 flex-shrink-0" />
