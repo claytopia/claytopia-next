@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
+/* ============================================
+   CLAYTOPIA COLOR SYSTEM
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Sage green palette - earthy, warm */
+  --sage-50: oklch(0.96 0.02 130);   /* Light background tint */
+  --sage-100: oklch(0.93 0.03 130);  /* Alt background */
+  --sage-200: oklch(0.88 0.05 130);
+  --sage-500: oklch(0.72 0.08 130);  /* Medium sage */
+  --sage-600: oklch(0.62 0.09 130);  /* Primary sage */
+  --sage-700: oklch(0.52 0.08 130);  /* Dark sage */
+
+  /* Lilac accent palette */
+  --lilac-400: oklch(0.75 0.10 310);
+  --lilac-500: oklch(0.65 0.12 310); /* Primary accent */
+  --lilac-600: oklch(0.55 0.12 310); /* Accent hover */
+
+  /* Neutrals */
+  --charcoal: oklch(0.25 0.01 250);        /* Primary text */
+  --charcoal-muted: oklch(0.40 0.01 250);  /* Muted text */
+
+  /* Semantic tokens */
+  --background: var(--sage-50);
+  --background-alt: var(--sage-100);
+  --foreground: var(--charcoal);
+  --foreground-muted: var(--charcoal-muted);
+  --primary: var(--sage-600);
+  --accent: var(--lilac-500);
+  --accent-hover: var(--lilac-600);
 }
+
+/* ============================================
+   TAILWIND THEME BRIDGE
+   ============================================ */
 
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+
+  /* Typography */
+  --font-sans: var(--font-plus-jakarta-sans), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ============================================
+   BASE STYLES
+   ============================================ */
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
