@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans in 3 waves (sequential)
 
 Plans:
-- [ ] 01-01-PLAN.md — Design system setup (colors, typography, Tailwind theme)
+- [x] 01-01-PLAN.md — Design system setup (colors, typography, Tailwind theme)
 - [ ] 01-02-PLAN.md — Layout components (Header, Footer, Container)
 - [ ] 01-03-PLAN.md — Navigation (hamburger menu with slide-out panel)
 
@@ -72,7 +72,7 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/3 | Planned | - |
+| 1. Foundation | 1/3 | In progress | - |
 | 2. Homepage Content | 0/? | Not started | - |
 | 3. Technical Polish | 0/? | Not started | - |
 
