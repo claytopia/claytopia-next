@@ -45,7 +45,7 @@ export function MobileMenu() {
   return (
     <>
       {/* Hamburger button */}
-      <div className="relative z-50">
+      <div className="relative z-[60]">
         <Squeeze
           toggled={isOpen}
           toggle={setIsOpen}
@@ -64,7 +64,7 @@ export function MobileMenu() {
             allowOutsideClick: true,
           }}
         >
-          <div className="fixed inset-0 z-40">
+          <div className="fixed inset-0 z-50">
             {/* Backdrop overlay */}
             <div
               className="absolute inset-0 bg-black/40"
