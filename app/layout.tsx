@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -7,12 +7,6 @@ import { Footer } from './components/Footer';
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta-sans",
-  display: "swap",
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair-display",
   display: "swap",
 });
 
@@ -27,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className={`${plusJakartaSans.variable} ${playfairDisplay.variable}`}>
+    <html lang="de" className={plusJakartaSans.variable}>
       <body className="font-sans bg-background text-foreground antialiased">
         <div className="flex min-h-screen flex-col">
           <Header />

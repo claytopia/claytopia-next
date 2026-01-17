@@ -48,7 +48,6 @@
 
   /* Typography */
   --font-sans: var(--font-plus-jakarta-sans), system-ui, sans-serif;
-  --font-serif: var(--font-playfair-display), Georgia, serif;
 }
 
 /* ============================================
@@ -59,10 +58,4 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-}
-
-/* Headings use elegant serif font */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  font-weight: 500;
 }

@@ -7,7 +7,7 @@ export function Header() {
       <Container>
         <div className="flex h-16 items-center justify-between">
           {/* Logo/wordmark - left */}
-          <a href="/" className="font-serif text-2xl font-medium tracking-tight text-foreground">
+          <a href="/" className="text-xl font-semibold tracking-tight text-foreground">
             Claytopia
           </a>
 
