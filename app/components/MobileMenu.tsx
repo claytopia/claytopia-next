@@ -72,59 +72,61 @@ export function MobileMenu() {
               aria-hidden="true"
             />
 
-            {/* Slide-out panel - solid opaque background */}
-            <nav
-              className="absolute right-0 top-0 h-full w-80 max-w-[calc(100%-3rem)]
-                         shadow-2xl border-l border-foreground/10
-                         transform transition-transform duration-300 ease-out
-                         flex flex-col"
-              role="dialog"
-              aria-modal="true"
-              aria-label="Navigation"
+            {/* Slide-out panel */}
+            <div
+              className="absolute right-0 top-0 h-full w-80 max-w-[calc(100%-3rem)] shadow-2xl"
               style={{ backgroundColor: '#e8ebe3' }}
             >
-              {/* Panel header */}
-              <div className="h-16 flex-shrink-0" />
+              <nav
+                className="relative h-full flex flex-col"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Navigation"
+                style={{ backgroundColor: '#e8ebe3' }}
+              >
+                {/* Panel header */}
+                <div className="h-16 flex-shrink-0" style={{ backgroundColor: '#e8ebe3' }} />
 
-              {/* Navigation links */}
-              <ul className="flex-1 px-6 py-4">
-                {navItems.map((item) => (
-                  <li key={item.href}>
+                {/* Navigation links */}
+                <ul className="flex-1 px-6 py-4" style={{ backgroundColor: '#e8ebe3' }}>
+                  {navItems.map((item) => (
+                    <li key={item.href}>
+                      <a
+                        href={item.href}
+                        onClick={closeMenu}
+                        className="block px-4 py-3 text-lg font-medium text-foreground
+                                   rounded-xl transition-colors duration-150
+                                   hover:bg-white/50
+                                   focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Bottom section - contact info */}
+                <div className="flex-shrink-0 px-6 pb-8" style={{ backgroundColor: '#e8ebe3' }}>
+                  <div className="border-t border-foreground/10 pt-6">
+                    <p className="text-xs font-medium uppercase tracking-wider text-foreground-muted mb-3">
+                      Kontakt
+                    </p>
                     <a
-                      href={item.href}
-                      onClick={closeMenu}
-                      className="block px-4 py-3 text-lg font-medium text-foreground
-                                 rounded-xl transition-colors duration-150
-                                 hover:bg-foreground/5
-                                 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                      href="tel:+491718336539"
+                      className="block text-sm text-foreground hover:text-accent transition-colors"
                     >
-                      {item.label}
+                      +49 171 833 6539
                     </a>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Bottom section - contact info */}
-              <div className="flex-shrink-0 px-6 pb-8">
-                <div className="border-t border-foreground/10 pt-6">
-                  <p className="text-xs font-medium uppercase tracking-wider text-foreground-muted mb-3">
-                    Kontakt
-                  </p>
-                  <a
-                    href="tel:+491718336539"
-                    className="block text-sm text-foreground hover:text-accent transition-colors"
-                  >
-                    +49 171 833 6539
-                  </a>
-                  <a
-                    href="mailto:hello@claytopia.de"
-                    className="mt-1 block text-sm text-foreground hover:text-accent transition-colors"
-                  >
-                    hello@claytopia.de
-                  </a>
+                    <a
+                      href="mailto:hello@claytopia.de"
+                      className="mt-1 block text-sm text-foreground hover:text-accent transition-colors"
+                    >
+                      hello@claytopia.de
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </nav>
+              </nav>
+            </div>
           </div>
         </FocusTrap>
       )}
