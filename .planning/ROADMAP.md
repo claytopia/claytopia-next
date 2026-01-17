@@ -28,10 +28,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Hamburger menu opens/closes and shows navigation links
   3. Header and footer render consistently with earthy Claytopia colors
   4. All text meets WCAG AA contrast requirements and uses semantic HTML
-**Plans**: TBD
+**Plans**: 3 plans in 3 waves (sequential)
 
 Plans:
-- [ ] 01-01: TBD
+- [ ] 01-01-PLAN.md — Design system setup (colors, typography, Tailwind theme)
+- [ ] 01-02-PLAN.md — Layout components (Header, Footer, Container)
+- [ ] 01-03-PLAN.md — Navigation (hamburger menu with slide-out panel)
 
 ### Phase 2: Homepage Content
 
@@ -70,7 +72,7 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/? | Not started | - |
+| 1. Foundation | 0/3 | Planned | - |
 | 2. Homepage Content | 0/? | Not started | - |
 | 3. Technical Polish | 0/? | Not started | - |
 
