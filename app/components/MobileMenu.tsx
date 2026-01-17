@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { Squeeze } from 'hamburger-react';
 import FocusTrap from 'focus-trap-react';
 
@@ -14,6 +15,12 @@ const navItems = [
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Track when component is mounted (for portal)
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Close menu on Escape key
   useEffect(() => {
@@ -56,8 +63,8 @@ export function MobileMenu() {
         />
       </div>
 
-      {/* Overlay and slide-out panel - only rendered when open */}
-      {isOpen && (
+      {/* Overlay and slide-out panel - rendered via portal to escape header stacking context */}
+      {mounted && isOpen && createPortal(
         <FocusTrap
           focusTrapOptions={{
             initialFocus: false,
@@ -128,7 +135,8 @@ export function MobileMenu() {
               </nav>
             </div>
           </div>
-        </FocusTrap>
+        </FocusTrap>,
+        document.body
       )}
     </>
   );
