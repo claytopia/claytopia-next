@@ -91,8 +91,25 @@ export function MobileMenu() {
                 aria-label="Navigation"
                 style={{ backgroundColor: '#e8ebe3' }}
               >
-                {/* Panel header */}
-                <div className="h-16 flex-shrink-0" style={{ backgroundColor: '#e8ebe3' }} />
+                {/* Panel header with close button */}
+                <div className="h-16 flex-shrink-0 flex items-center justify-end px-4" style={{ backgroundColor: '#e8ebe3' }}>
+                  <button
+                    type="button"
+                    onClick={closeMenu}
+                    className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-black/5 transition-colors"
+                    aria-label="Menü schließen"
+                  >
+                    <svg
+                      className="h-6 w-6 text-foreground"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
 
                 {/* Navigation links */}
                 <ul className="flex-1 px-6 py-4" style={{ backgroundColor: '#e8ebe3' }}>
