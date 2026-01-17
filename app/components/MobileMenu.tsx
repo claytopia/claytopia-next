@@ -56,7 +56,7 @@ export function MobileMenu() {
         />
       </div>
 
-      {/* Overlay and slide-out panel */}
+      {/* Overlay and slide-out panel - only rendered when open */}
       {isOpen && (
         <FocusTrap
           focusTrapOptions={{
@@ -67,34 +67,36 @@ export function MobileMenu() {
           <div className="fixed inset-0 z-40">
             {/* Backdrop overlay */}
             <div
-              className="absolute inset-0 bg-foreground/20 backdrop-blur-sm"
+              className="absolute inset-0 bg-foreground/30 backdrop-blur-sm"
               onClick={closeMenu}
               aria-hidden="true"
             />
 
-            {/* Slide-out panel */}
+            {/* Slide-out panel - solid opaque background */}
             <nav
-              className="absolute right-0 top-0 h-full w-80 max-w-[calc(100%-3rem)] bg-background shadow-xl
-                         transform transition-transform duration-300 ease-out"
+              className="absolute right-0 top-0 h-full w-80 max-w-[calc(100%-3rem)]
+                         bg-sage-50 shadow-2xl border-l border-foreground/10
+                         transform transition-transform duration-300 ease-out
+                         flex flex-col"
               role="dialog"
               aria-modal="true"
               aria-label="Navigation"
+              style={{ backgroundColor: 'oklch(0.96 0.02 130)' }}
             >
-              {/* Panel header with close area */}
-              <div className="flex h-16 items-center justify-end px-4">
-                {/* The hamburger button handles close via toggle */}
-              </div>
+              {/* Panel header */}
+              <div className="h-16 flex-shrink-0" />
 
               {/* Navigation links */}
-              <ul className="px-4 py-2">
+              <ul className="flex-1 px-6 py-4">
                 {navItems.map((item) => (
                   <li key={item.href}>
                     <a
                       href={item.href}
                       onClick={closeMenu}
-                      className="block px-4 py-4 text-lg font-medium text-foreground
-                                 rounded-lg hover:bg-background-alt
-                                 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                      className="block px-4 py-3 text-lg font-medium text-foreground
+                                 rounded-xl transition-colors duration-150
+                                 hover:bg-foreground/5
+                                 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                     >
                       {item.label}
                     </a>
@@ -103,18 +105,20 @@ export function MobileMenu() {
               </ul>
 
               {/* Bottom section - contact info */}
-              <div className="absolute bottom-8 left-0 right-0 px-8">
+              <div className="flex-shrink-0 px-6 pb-8">
                 <div className="border-t border-foreground/10 pt-6">
-                  <p className="text-sm text-foreground-muted">Kontakt</p>
+                  <p className="text-xs font-medium uppercase tracking-wider text-foreground-muted mb-3">
+                    Kontakt
+                  </p>
                   <a
                     href="tel:+491718336539"
-                    className="mt-2 block text-foreground hover:text-accent"
+                    className="block text-sm text-foreground hover:text-accent transition-colors"
                   >
                     +49 171 833 6539
                   </a>
                   <a
                     href="mailto:hello@claytopia.de"
-                    className="mt-1 block text-foreground hover:text-accent"
+                    className="mt-1 block text-sm text-foreground hover:text-accent transition-colors"
                   >
                     hello@claytopia.de
                   </a>
