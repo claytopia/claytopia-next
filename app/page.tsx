@@ -24,9 +24,11 @@ export default function Home() {
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 tracking-tight drop-shadow-lg">
             Claytopia
           </h1>
+          {/*
           <p className="text-xl md:text-2xl font-light tracking-wide mb-10 text-white/90 max-w-2xl mx-auto">
             Time to get dirty
           </p>
+          */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="/clay-club" 
