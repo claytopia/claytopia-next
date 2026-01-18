@@ -13,9 +13,21 @@ export async function submitContactForm(prevState: unknown, formData: FormData) 
     return { success: false, message: 'Bitte fülle alle Pflichtfelder aus.' };
   }
 
+  // Check for environment variables
+  if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+    console.error('SMTP Credentials missing. Please check your .env.local file.');
+    return {
+      success: false,
+      message: 'Server-Konfigurationsfehler: E-Mail-Zugangsdaten fehlen.'
+    };
+  }
+
   try {
     // Create a transporter using environment variables
     // These should be set in .env.local for local development
+
+    console.log('Submitting...', process.env.SMTP_USER);
+
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT) || 587,
@@ -24,14 +36,19 @@ export async function submitContactForm(prevState: unknown, formData: FormData) 
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      tls: {
+        ciphers:'SSLv3'
+      },
     });
 
+
+    console.log('Nodemailer Transporter created', transporter);
     // Email content
     const mailOptions = {
       from: `"${name}" <${process.env.SMTP_USER}>`, // Sender address (often needs to be the auth user)
       replyTo: email, // The user's email for replies
       to: process.env.CONTACT_EMAIL_RECEIVER || 'hello@claytopia.de',
-      subject: `Kontaktanfrage von ${name} via Website`,
+      subject: `CLAYTOPIA: Kontaktanfrage von ${name} via Website`,
       text: `Name: ${name}
 E-Mail: ${email}
 Telefon: ${phone || 'Nicht angegeben'}

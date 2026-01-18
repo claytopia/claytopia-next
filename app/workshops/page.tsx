@@ -154,7 +154,7 @@ export default function WorkshopsPage() {
             {/* Image */}
             <div className="relative aspect-[4/5] lg:aspect-square rounded-sm overflow-hidden shadow-sm">
                <Image 
-                src="/img/clayclub/20250521_133103.jpg" 
+                src="/img/clayclub/20250521_132413.jpg"
                 alt="Töpfern im Workshop" 
                 fill 
                 className="object-cover"

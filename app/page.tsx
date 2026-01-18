@@ -10,7 +10,7 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/img/atelier.jpg"
+            src="/img/20241001_133949.jpg"
             alt="Claytopia Atelier"
             fill
             className="object-cover"
@@ -131,7 +131,7 @@ export default function Home() {
             <a href="/workshops" className="group block space-y-4">
               <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
                 <Image
-                  src="/img/sliders/slider1.png"
+                  src="/img/clayclub/20250601_170257.jpg"
                   alt="Workshops"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -148,7 +148,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* GALLERY / MOOD */}
+      {/* GALLERY / MOOD
       <section className="py-24">
         <Container>
           <h2 className="font-serif text-3xl md:text-4xl mb-12 text-center">Impressionen</h2>
@@ -173,7 +173,7 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
+*/}
     </div>
   );
 }

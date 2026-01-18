@@ -16,7 +16,7 @@ export default function ContactPage() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/img/kontakt.jpg"
+            src="/img/clayclub/20250601_170257.jpg"
             alt="Kontakt Claytopia"
             fill
             className="object-cover"
@@ -73,7 +73,7 @@ export default function ContactPage() {
                 </ul>
               </div>
 
-              {/* Map Image / Visual Placeholder */}
+              {/* Map Image / Visual Placeholder
               <div className="relative aspect-video rounded-sm overflow-hidden bg-stone-100 shadow-sm">
                  <Image 
                     src="/img/location-pin.png" 
@@ -87,6 +87,7 @@ export default function ContactPage() {
                     </span>
                   </div>
               </div>
+              */}
 
             </div>
 
