@@ -44,7 +44,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* INTRO / ABOUT SECTION */}
+      {/* INTRO / ABOUT SECTION
       <section className="py-24 bg-background">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
+*/}
       {/* SERVICES GRID */}
       <section className="py-24 bg-background-alt">
         <Container>
