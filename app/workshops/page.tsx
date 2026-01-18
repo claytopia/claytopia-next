@@ -15,7 +15,7 @@ export default function WorkshopsPage() {
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/img/sliders/slider1.png"
+            src="/img/clayclub/20250606_003442.jpg"
             alt="Claytopia Workshops"
             fill
             className="object-cover"
@@ -50,15 +50,15 @@ export default function WorkshopsPage() {
           <h2 className="font-serif text-3xl md:text-4xl mb-12 text-center">Kommende Workshops</h2>
           
           <div className="bg-background rounded-sm shadow-sm overflow-hidden flex flex-col lg:flex-row">
-            <div className="lg:w-1/3 relative min-h-[300px]">
+            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
                <Image 
-                src="/img/sliders/slider2.png" 
+                src="/img/clayclub/20241001_133856.jpg" 
                 alt="Weihnachtswerkstatt" 
                 fill 
                 className="object-cover"
               />
             </div>
-            <div className="lg:w-2/3 p-8 lg:p-12 space-y-6">
+            <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                  <h3 className="font-serif text-2xl md:text-3xl text-primary">HANDS ON CLAY: Weihnachtswerkstatt</h3>
                  <span className="bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium whitespace-nowrap">
@@ -153,17 +153,17 @@ export default function WorkshopsPage() {
 
             {/* Images */}
             <div className="grid grid-cols-2 gap-4">
-               <div className="relative aspect-[3/4] rounded-sm overflow-hidden mt-8">
+               <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
                   <Image 
-                    src="/img/sliders/slider3.png" 
+                    src="/img/portfolio/work3.jpg" 
                     alt="Individueller Workshop" 
                     fill 
                     className="object-cover"
                   />
                </div>
-               <div className="relative aspect-[3/4] rounded-sm overflow-hidden mb-8">
+               <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
                   <Image 
-                    src="/img/sliders/04.jpg" 
+                    src="/img/clayclub/20250521_133103.jpg" 
                     alt="Kreatives Arbeiten" 
                     fill 
                     className="object-cover"
