@@ -27,9 +27,11 @@ export default function BrennservicePage() {
           <h1 className="font-serif text-5xl md:text-7xl mb-4 tracking-tight drop-shadow-lg">
             Brennservice
           </h1>
+            {/*
           <p className="text-xl md:text-2xl font-light tracking-wide max-w-2xl mx-auto text-white/90">
             Wir geben deinem Ton den letzten Schliff.
           </p>
+          */}
         </Container>
       </section>
 
