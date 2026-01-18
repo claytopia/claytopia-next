@@ -1,35 +1,47 @@
 @import "tailwindcss";
 
 /* ============================================
-   CLAYTOPIA COLOR SYSTEM
+   CLAYTOPIA COLOR SYSTEM - STUDIO VIBES
    ============================================ */
 
 :root {
-  /* Sage green palette - earthy, warm */
-  --sage-50: oklch(0.96 0.02 130);   /* Light background tint */
-  --sage-100: oklch(0.93 0.03 130);  /* Alt background */
-  --sage-200: oklch(0.88 0.05 130);
-  --sage-500: oklch(0.72 0.08 130);  /* Medium sage */
-  --sage-600: oklch(0.62 0.09 130);  /* Primary sage */
-  --sage-700: oklch(0.52 0.08 130);  /* Dark sage */
+  /* Earthy / Clay Palette */
+  --clay-50: #FAF9F6;   /* Off-white / Bone */
+  --clay-100: #F0EEE9;  /* Light Grey/Beige */
+  --clay-200: #E6E2DB;
+  --clay-300: #D4CFC5;
+  --clay-400: #B0A89E;
+  --clay-500: #8C8276;
+  --clay-600: #6B6259;
+  --clay-700: #4A443E;
+  --clay-800: #2E2B27;
+  --clay-900: #1A1917;
 
-  /* Lilac accent palette */
-  --lilac-400: oklch(0.75 0.10 310);
-  --lilac-500: oklch(0.65 0.12 310); /* Primary accent */
-  --lilac-600: oklch(0.55 0.12 310); /* Accent hover */
+  /* Accent Colors (Terracotta/Rust) */
+  --terra-300: #E6B695;
+  --terra-400: #D99A6C;
+  --terra-500: #C27D4F; /* Primary Warmth */
+  --terra-600: #A66236;
+  --terra-700: #8A4B22;
 
-  /* Neutrals */
-  --charcoal: oklch(0.25 0.01 250);        /* Primary text */
-  --charcoal-muted: oklch(0.40 0.01 250);  /* Muted text */
+  /* Semantic Tokens */
+  --background: var(--clay-50);
+  --background-alt: var(--clay-100);
+  --foreground: var(--clay-800);
+  --foreground-muted: var(--clay-600);
+  
+  --primary: var(--terra-500);
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: var(--clay-200);
+  --secondary-foreground: var(--clay-800);
 
-  /* Semantic tokens */
-  --background: var(--sage-50);
-  --background-alt: var(--sage-100);
-  --foreground: var(--charcoal);
-  --foreground-muted: var(--charcoal-muted);
-  --primary: var(--sage-600);
-  --accent: var(--lilac-500);
-  --accent-hover: var(--lilac-600);
+  --border: var(--clay-300);
+  --input: var(--clay-200);
+  --ring: var(--terra-400);
+
+  /* Radius - slightly sharper for 'studio' feel */
+  --radius: 0.25rem;
 }
 
 /* ============================================
@@ -43,11 +55,14 @@
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);
   --color-primary: var(--primary);
-  --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
-
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-border: var(--border);
+  
   /* Typography */
-  --font-sans: var(--font-plus-jakarta-sans), system-ui, sans-serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-serif: var(--font-serif), Georgia, serif;
 }
 
 /* ============================================
@@ -58,4 +73,23 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Utility classes for studio vibes */
+.text-balance {
+  text-wrap: balance;
+}
+
+.container-wide {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }

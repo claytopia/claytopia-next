@@ -33,7 +33,7 @@ Full homepage experience with hero section, four offerings overview, club CTA, a
 - CTAs: multiple throughout the page (subtle) + prominent one before footer
 - Mobile: images stack above text content
 
-### Claude's Discretion
+### Discretion
 - CTA button styling and exact colors
 - Section transition effects (if any)
 - Exact typography sizes and weights
