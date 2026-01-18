@@ -25,7 +25,7 @@ export default function Home() {
             Claytopia
           </h1>
           <p className="text-xl md:text-2xl font-light tracking-wide mb-10 text-white/90 max-w-2xl mx-auto">
-            Dein Keramik-Atelier in Rösrath für kreative Töpfer-Erlebnisse.
+            Time to get dirty
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
@@ -84,7 +84,7 @@ export default function Home() {
       <section className="py-24 bg-background-alt">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl mb-4">Unser Angebot</h2>
+            <h2 className="font-serif text-3xl md:text-4xl mb-4">Mein Angebot</h2>
             <p className="text-foreground-muted">
               Finde das passende Angebot für deine kreative Reise.
             </p>
@@ -104,8 +104,7 @@ export default function Home() {
               <div>
                 <h3 className="font-serif text-2xl mb-2 group-hover:text-primary transition-colors">Clay Club</h3>
                 <p className="text-foreground-muted text-sm leading-relaxed">
-                  Nutze unser offenes Atelier für deine eigenen Projekte. Flexibel und kreativ in Gemeinschaft töpfern.
-                </p>
+                  Jeden Dienstag und Donnerstag Abend, sowie Freitag Vormittag, öffne ich die Türen meines Ateliers für den Clay Club. In diesem freien Töpferangebot kannst du in kleiner, netter Runde deine eigenen Ideen, in deinem eigenen Tempo umsetzen.                </p>
               </div>
             </a>
 
@@ -122,8 +121,7 @@ export default function Home() {
               <div>
                 <h3 className="font-serif text-2xl mb-2 group-hover:text-primary transition-colors">Brennservice</h3>
                 <p className="text-foreground-muted text-sm leading-relaxed">
-                  Du töpferst zuhause? Wir brennen deine Werke professionell für dich. Schrüh- und Glasurbrand.
-                </p>
+                  Du töpferst gerne zuhause, hast aber keinen eigenen Brennofen? Dann nutze meinen Brennservice.                </p>
               </div>
             </a>
 
@@ -140,8 +138,7 @@ export default function Home() {
               <div>
                 <h3 className="font-serif text-2xl mb-2 group-hover:text-primary transition-colors">Workshops</h3>
                 <p className="text-foreground-muted text-sm leading-relaxed">
-                  Lerne neue Techniken oder schnuppere in die Welt der Keramik in unseren geführten Kursen.
-                </p>
+                  Regelmäßig biete ich Workshops zu unterschiedlichen Themen an. Trage dich gerne in meinen Newsletter ein, um kein Event zu verpassen.                </p>
               </div>
             </a>
           </div>

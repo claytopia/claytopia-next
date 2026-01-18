@@ -44,7 +44,7 @@ export default function WorkshopsPage() {
         </Container>
       </section>
 
-      {/* UPCOMING WORKSHOPS */}
+      {/* UPCOMING WORKSHOPS
       <section className="py-16 bg-background-alt">
         <Container>
           <h2 className="font-serif text-3xl md:text-4xl mb-12 text-center">Kommende Workshops</h2>
@@ -110,7 +110,7 @@ export default function WorkshopsPage() {
 
         </Container>
       </section>
-
+*/}
       {/* INDIVIDUAL WORKSHOPS */}
       <section className="py-20">
         <Container>
