@@ -151,24 +151,14 @@ export default function WorkshopsPage() {
 
             </div>
 
-            {/* Images */}
-            <div className="grid grid-cols-2 gap-4">
-               <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
-                  <Image 
-                    src="/img/portfolio/work3.jpg" 
-                    alt="Individueller Workshop" 
-                    fill 
-                    className="object-cover"
-                  />
-               </div>
-               <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
-                  <Image 
-                    src="/img/clayclub/20250521_133103.jpg" 
-                    alt="Kreatives Arbeiten" 
-                    fill 
-                    className="object-cover"
-                  />
-               </div>
+            {/* Image */}
+            <div className="relative aspect-[4/5] lg:aspect-square rounded-sm overflow-hidden shadow-sm">
+               <Image 
+                src="/img/clayclub/20250521_133103.jpg" 
+                alt="Töpfern im Workshop" 
+                fill 
+                className="object-cover"
+              />
             </div>
 
           </div>
