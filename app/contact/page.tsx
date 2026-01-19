@@ -54,8 +54,8 @@ export default function ContactPage() {
                     <a href="mailto:hello@claytopia.de" className="block hover:text-primary transition-colors">
                       <span className="font-medium text-foreground">E-Mail:</span> hello@claytopia.de
                     </a>
-                    <a href="tel:+491778336539" className="block hover:text-primary transition-colors">
-                      <span className="font-medium text-foreground">Telefon:</span> +49 177 833 6539
+                    <a href="tel:+491718336539" className="block hover:text-primary transition-colors">
+                      <span className="font-medium text-foreground">Telefon:</span> +49 171 833 6539
                     </a>
                   </div>
                 </div>
