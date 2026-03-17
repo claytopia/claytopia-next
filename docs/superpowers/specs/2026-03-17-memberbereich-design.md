@@ -19,12 +19,13 @@ Auf dem bestehenden Next.js 16 / TypeScript / Tailwind v4 Stack:
 Alle Zeitangaben werden als `timestamptz` in UTC gespeichert und in der Anzeige nach Europe/Berlin (CET/CEST) konvertiert.
 
 ### `profiles`
-Erweiterung von `auth.users` (Supabase). Wird per Trigger bei Registrierung angelegt. Es wird bewusst nur der Vorname gespeichert — kein Nachname.
+Erweiterung von `auth.users` (Supabase). Wird per Trigger bei Registrierung angelegt.
 
 | Feld | Typ | Beschreibung |
 |---|---|---|
 | `id` | uuid (FK auth.users) PK | Primary Key |
 | `first_name` | text NOT NULL | Vorname (wird anderen Mitgliedern angezeigt) |
+| `last_name` | text NOT NULL | Nachname (nur für Pia sichtbar im Admin-Bereich, nicht im Member-UI) |
 | `role` | enum: `admin` / `member` NOT NULL default `member` | Zugangsebene |
 | `created_at` | timestamptz | — |
 
@@ -134,7 +135,7 @@ Kompakte Listenansicht (`/members`):
 | `sessions` | Alle eingeloggte Nutzer | Nur admin |
 | `bookings` | Eigene Buchungen (member); alle (admin) | Eigene aktive Buchungen (member, nur status-Änderung); alle (admin) |
 
-Vornamen anderer Mitglieder für die Buchungsanzeige werden über eine separate, schreibgeschützte View abgefragt (nur `first_name` und `session_id`, keine weiteren Profildaten).
+Vornamen anderer Mitglieder für die Buchungsanzeige werden über eine separate, schreibgeschützte View abgefragt (nur `first_name` und `session_id` — kein `last_name` oder andere Profildaten).
 
 ## Termin-Löschung (Admin)
 
