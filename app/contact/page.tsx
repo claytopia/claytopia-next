@@ -47,8 +47,8 @@ export default function ContactPage() {
                 <div className="space-y-6 text-lg text-foreground-muted">
                   <p>
                     <strong>Claytopia Keramik-Atelier</strong><br/>
-                    Rösrath-Hoffnungsthal<br/>
-                    (Genaue Adresse bei Terminvereinbarung)
+                    Stöcker Weg 54<br/>
+                    51503 Rösrath
                   </p>
                   <div className="space-y-2">
                     <a href="mailto:hello@claytopia.de" className="block hover:text-primary transition-colors">
