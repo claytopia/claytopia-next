@@ -32,7 +32,7 @@ export default async function AdminMembersPage() {
     return acc
   }, {})
 
-  const members = (profiles ?? []).filter(p => p.role === 'member')
+  const members = profiles ?? []
 
   return (
     <section className="py-16 bg-background min-h-screen">

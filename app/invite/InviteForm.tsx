@@ -1,10 +1,35 @@
 'use client'
 
-import { useActionState } from 'react'
+import { useEffect, useState, useActionState } from 'react'
+import { createClient } from '@/lib/supabase/client'
 import { completeInvite } from './actions'
 
 export function InviteForm() {
+  const [sessionReady, setSessionReady] = useState(false)
+  const [sessionError, setSessionError] = useState<string | null>(null)
   const [state, action, pending] = useActionState(completeInvite, null)
+
+  useEffect(() => {
+    // Supabase puts invite tokens in the URL hash (#access_token=...&type=invite).
+    // Calling getSession() triggers the browser client to exchange the hash token
+    // for a proper session stored in cookies, which the server action can then read.
+    const supabase = createClient()
+    supabase.auth.getSession().then(({ data: { session }, error }) => {
+      if (error || !session) {
+        setSessionError('Ungültiger oder abgelaufener Einladungslink. Bitte kontaktiere Pia.')
+      } else {
+        setSessionReady(true)
+      }
+    })
+  }, [])
+
+  if (sessionError) {
+    return <p className="text-sm text-red-600">{sessionError}</p>
+  }
+
+  if (!sessionReady) {
+    return <p className="text-sm text-foreground-muted">Einladungslink wird geprüft…</p>
+  }
 
   return (
     <form action={action} className="space-y-4">
