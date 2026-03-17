@@ -169,9 +169,9 @@ export default function ClayClubPage() {
                 />
               </div>
               <h3 className="font-serif text-2xl mb-2">Schnuppertermin</h3>
-              <p className="text-3xl font-light mb-4">25,-€</p>
+              <p className="text-3xl font-light mb-4">30,-€</p>
               <p className="text-foreground-muted text-sm flex-grow">
-                Maximal 2x möglich. Beim anschließenden Kauf einer Club-Karte werden 25,-€ angerechnet.
+                Maximal 2x möglich. Beim anschließenden Kauf einer Club-Karte werden 30,-€ angerechnet.
               </p>
             </div>
 
