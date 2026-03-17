@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server'
+import { createClient, createServiceClient } from '@/lib/supabase/server'
 import { Container } from '@/app/components/Container'
 import { InviteMemberForm } from './InviteMemberForm'
 import { CardForm } from './CardForm'
@@ -15,11 +15,19 @@ const cardTypeLabel: Record<string, string> = {
 
 export default async function AdminMembersPage() {
   const supabase = await createClient()
+  const serviceSupabase = createServiceClient()
 
-  const { data: profiles } = await supabase
-    .from('profiles')
-    .select('id, first_name, last_name, role, created_at')
-    .order('created_at', { ascending: true })
+  const [{ data: profiles }, { data: { users: authUsers } }] = await Promise.all([
+    supabase
+      .from('profiles')
+      .select('id, first_name, last_name, role, created_at')
+      .order('created_at', { ascending: true }),
+    serviceSupabase.auth.admin.listUsers(),
+  ])
+
+  const emailById = Object.fromEntries(
+    (authUsers ?? []).map(u => [u.id, u.email ?? ''])
+  )
 
   const { data: cards } = await supabase
     .from('club_cards')
@@ -50,9 +58,16 @@ export default async function AdminMembersPage() {
               <div key={profile.id} className="border border-border rounded-sm p-6">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <p className="font-medium text-foreground">{profile.first_name} {profile.last_name}</p>
+                    {profile.first_name ? (
+                      <p className="font-medium text-foreground">{profile.first_name} {profile.last_name}</p>
+                    ) : (
+                      <p className="font-medium text-foreground-muted italic">
+                        {emailById[profile.id] ?? '—'}
+                        <span className="ml-2 text-xs font-normal bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-sm not-italic">Einladung ausstehend</span>
+                      </p>
+                    )}
                     <p className="text-sm text-foreground-muted">
-                      Mitglied seit {new Date(profile.created_at).toLocaleDateString('de-DE')}
+                      {emailById[profile.id] && profile.first_name ? emailById[profile.id] + ' · ' : ''}Eingeladen {new Date(profile.created_at).toLocaleDateString('de-DE')}
                     </p>
                   </div>
                 </div>
