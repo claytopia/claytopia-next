@@ -177,7 +177,7 @@ export default function BrennservicePage() {
                Ich übernehme keine Haftung für Beschädigungen oder Risse, die durch den Brennvorgang oder das Be- und Entladen des Ofens entstehen. Ton ist ein natürliches Material, bei dem Schäden nie ganz ausgeschlossen werden können.
              </p>
              <p>
-               Sollten Schäden an meinem Ofen, den Ofenplatten oder anderem Zubehör durch dein Werkstück (z.B. falscher Ton, ablaufende Glasur) verursacht werden, stelle ich die entstandenen Kosten in Rechnung (z.B. Reinigung Ofenplatte 25,-€/Std, Austausch 85,-€).
+               Sollten Schäden an meinem Ofen, den Ofenplatten oder anderem Zubehör durch dein Werkstück (z.B. falscher Ton, ablaufende Glasur) verursacht werden, stelle ich die entstandenen Kosten in Rechnung (z.B. Reinigung Ofenplatte 30,-€/Std, Austausch 85,-€).
              </p>
           </div>
         </Container>
