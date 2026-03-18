@@ -86,7 +86,7 @@ export default function ClayClubPage() {
                     Die Anmeldung erfolgt über einen Terminplaner-Link, den du nach dem Kauf deiner ersten Club-Karte von mir erhältst. Kommst du zum ersten Mal, schreib mich gerne per Signal oder WhatsApp an.
                   </p>
                   <p className="text-sm italic">
-                    Der Clay Club findet in der Regel auch während der Ferien und an Feiertagen statt – außer ich bin selbst verreist. Sollte ein Termin einmal entfallen, kündige ich das rechtzeitig an. Entsprechende Tage erscheinen dann auch nicht im Terminplaner.
+                    Der Clay Club oft auch während der Ferien und an Feiertagen statt – außer ich bin selbst verreist. Alle Termine sind im Terminkalender einsehrbar. Ich behalte mir vor einen Termin abzusagen, wenn sich niemand angemeldet hat. Es gibt keine Zu- oder Absagefrist. Solltest du 30min vor Beginn merken, dass du es nicht schaffst, ist das gar kein Problem! Wir haben doch alle mal nen Durchhänger oder abends keine Energie mehr. Das Angebot ist bewusst so flexibel gestaltet, damit es Entspannung bringt und nicht zusätzlich Stress verursacht.
                   </p>
                 </div>
               </div>
