@@ -49,12 +49,18 @@ export default function BrennservicePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-stone-50 p-8 rounded-sm">
                 <h3 className="font-serif text-2xl mb-4 text-primary">Schrühbrand (950°C)</h3>
                 <p className="text-foreground-muted">
-                  Der erste Brand deiner vollständig getrockneten Tonarbeiten. 
+                  Der erste Brand deiner vollständig getrockneten Tonarbeiten.
                   Nach dem Schrühbrand sind die Stücke bereit zum Glasieren.
+                </p>
+              </div>
+              <div className="bg-stone-50 p-8 rounded-sm">
+                <h3 className="font-serif text-2xl mb-4 text-primary">Glasurbrand (1040°)</h3>
+                <p className="text-foreground-muted">
+                  Einbrennen der Glasur im sogenannten Niedrigbrand. Bei dieser Brenntemperatur werden die Farben kräftiger und strahlender, als im Hochbrand. Beachte aber, dass die Keramik danach nicht wasserdicht ist!
                 </p>
               </div>
               <div className="bg-stone-50 p-8 rounded-sm">
