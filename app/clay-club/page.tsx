@@ -188,12 +188,10 @@ export default function ClayClubPage() {
               Im Preis enthalten ist die Nutzung aller Werkzeuge und Materialien in meinem Atelier – inklusive Ton und Glasuren. Die meisten meiner Glasuren sind tafelgeschirrgeeignet.
             </p>
             <p>
-              Die Brennkosten werden zusätzlich zum Kartenpreis berechnet und richten sich danach, wie viel du produzierst (Größe/Gewicht). Als Club-Karteninhaber*in erhältst du <strong>20% Rabatt</strong> auf die regulären Brennservice-Preise.
+              Die Brennkosten für den Schrühbrand sind im Kartenpreis enthalten. Die Kosten für den Glasurbrand werden zusätzlich zum Kartenpreis berechnet und richten sich danach, wie viel du produzierst (Größe/Gewicht).
             </p>
             <p>
-               Jedes Werkstück durchläuft zwei Brennvorgänge:
-               <br/>1. Schrühbrand bei 950°C (nach dem Trocknen)
-               <br/>2. Glasurbrand bei ca. 1220°C (nach dem Glasieren)
+
             </p>
           </div>
 

@@ -1,7 +1,5 @@
 ## Was biete ich an?
-Ich brenne in einem Kittec Toploader mit einem Fassungsvermögen von 125 Litern. Der Nutzraum hat einen Druchmesser von 59cm und eine Höhe von 46cm.
-
-Das Be- und Entladen des Ofens übernehme grundsätzlich ich.
+Gerne übernheme ich die Brände für deine zuhause entstandenen Werkstücke. Ich brenne in einem Kittec Toploader mit einem Fassungsvermögen von 125 Litern. Der Nutzraum hat einen Druchmesser von 59cm und eine Höhe von 46cm. Das Be- und Entladen des Ofens übernehme grundsätzlich ich.
 
 Schrühbrand (950°C):
 
@@ -19,7 +17,7 @@ Schrühbrand: 8,-€/kg
 
 Glasurbrand: 11,-€/kg
 
-Clay Club-Karteninhaber*innen erhalten 20% Rabatt auf den kg-Preis!
+
 
 Gesamter Ofen (125l):
 
