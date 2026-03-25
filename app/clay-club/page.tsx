@@ -15,7 +15,7 @@ export default function ClayClubPage() {
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/img/clayclub/20250606_003442.jpg"
+            src="/img/clayclub/20251116_124214.jpg"
             alt="Clay Club Atelier"
             fill
             className="object-cover"
