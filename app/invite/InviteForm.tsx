@@ -10,11 +10,16 @@ export function InviteForm() {
   const [state, action, pending] = useActionState(completeInvite, null)
 
   useEffect(() => {
-    // Supabase puts invite tokens in the URL hash (#access_token=...&type=invite).
-    // Calling getSession() triggers the browser client to exchange the hash token
-    // for a proper session stored in cookies, which the server action can then read.
     const supabase = createClient()
-    supabase.auth.getSession().then(({ data: { session }, error }) => {
+    const params = new URLSearchParams(window.location.hash.substring(1))
+    const accessToken = params.get('access_token')
+    const refreshToken = params.get('refresh_token')
+
+    const init = accessToken && refreshToken
+      ? supabase.auth.setSession({ access_token: accessToken, refresh_token: refreshToken })
+      : supabase.auth.getSession().then(r => ({ data: { session: r.data.session }, error: r.error }))
+
+    init.then(({ data: { session }, error }) => {
       if (error || !session) {
         setSessionError('Ungültiger oder abgelaufener Einladungslink. Bitte kontaktiere Pia.')
       } else {

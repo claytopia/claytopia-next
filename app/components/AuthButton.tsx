@@ -17,7 +17,7 @@ export function AuthButton({ isLoggedIn }: { isLoggedIn: boolean }) {
     return (
       <a href="/login"
         className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide">
-        Anmelden
+         Members
       </a>
     )
   }

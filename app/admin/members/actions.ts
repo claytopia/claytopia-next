@@ -9,7 +9,7 @@ export async function inviteMember(prevState: unknown, formData: FormData) {
 
   const serviceSupabase = createServiceClient()
   const { error } = await serviceSupabase.auth.admin.inviteUserByEmail(email, {
-    redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/invite`,
+    redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback?next=/invite`,
   })
 
   if (error) return { error: `Einladung fehlgeschlagen: ${error.message}` }

@@ -1,6 +1,7 @@
 'use server'
 
 import { createClient } from '@/lib/supabase/server'
+import { log } from 'console'
 import { redirect } from 'next/navigation'
 
 export async function completeInvite(prevState: unknown, formData: FormData) {
@@ -13,7 +14,10 @@ export async function completeInvite(prevState: unknown, formData: FormData) {
   const supabase = await createClient()
   const { data: { user }, error: userError } = await supabase.auth.getUser()
 
-  if (userError || !user) return { error: 'Ungültiger oder abgelaufener Einladungslink. Bitte Pia kontaktieren.' }
+  if (userError || !user) {
+    console.log('OOPS', userError, user)
+    return { error: 'Ungültiger oder abgelaufener Einladungslink. Bitte Pia kontaktieren.' }
+  }
 
   const { error: profileError } = await supabase
     .from('profiles')
@@ -25,7 +29,10 @@ export async function completeInvite(prevState: unknown, formData: FormData) {
   if (password) {
     if (password.length < 6) return { error: 'Passwort muss mindestens 6 Zeichen haben.' }
     const { error: pwError } = await supabase.auth.updateUser({ password })
-    if (pwError) return { error: 'Passwort konnte nicht gesetzt werden.' }
+    if (pwError) {
+      console.error(pwError)
+      return { error: 'Passwort konnte nicht gesetzt werden.' }
+    }
   }
 
   redirect('/members')
