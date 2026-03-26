@@ -20,7 +20,7 @@ export async function sendMagicLink(prevState: unknown, formData: FormData) {
   const supabase = await createClient()
   const { error } = await supabase.auth.signInWithOtp({
     email,
-    options: { emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/members` },
+    options: { emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback?next=/members` },
   })
 
   if (error) return { error: 'E-Mail konnte nicht gesendet werden.' }
