@@ -107,18 +107,11 @@ export default function BrennservicePage() {
               <h3 className="font-serif text-2xl mb-2">Gesamter Ofen</h3>
               <p className="text-sm text-foreground-muted mb-4">125 Liter</p>
               <div className="space-y-2">
-                <p className="text-lg">Schrühbrand: <strong>85,-€</strong></p>
+                <p className="text-lg">Schrühbrand: <strong>95,-€</strong></p>
                 <p className="text-lg">Glasurbrand: <strong>110,-€</strong></p>
               </div>
               <p className="text-xs text-foreground-muted mt-4">Temperatur nach Wahl</p>
             </div>
-
-          </div>
-
-          <div className="text-center mt-8">
-            <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full font-medium">
-              Clay Club-Karteninhaber*innen erhalten 20% Rabatt auf den kg-Preis!
-            </span>
           </div>
         </Container>
       </section>
