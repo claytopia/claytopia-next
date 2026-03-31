@@ -3,7 +3,7 @@
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 
-export function AuthButton({ isLoggedIn }: { isLoggedIn: boolean }) {
+export function AuthButton({ isLoggedIn, className }: { isLoggedIn: boolean; className?: string }) {
   const router = useRouter()
   const supabase = createClient()
 
@@ -13,19 +13,21 @@ export function AuthButton({ isLoggedIn }: { isLoggedIn: boolean }) {
     router.refresh()
   }
 
+  const defaultClass = "text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide"
+
   if (!isLoggedIn) {
     return (
-      <a href="/login"
-        className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide">
-         Members
+      <a href="/login" className={className ?? defaultClass}>
+        Members
       </a>
     )
   }
 
   return (
-    <button onClick={handleSignOut}
-      className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide">
+    <div>
+    <button onClick={handleSignOut} className={className ?? defaultClass}>
       Abmelden
     </button>
+    </div>
   )
 }

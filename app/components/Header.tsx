@@ -33,7 +33,7 @@ export async function Header() {
             {isLoggedIn && (
               <Link href="/members"
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide">
-                Mitglieder
+                Members
               </Link>
             )}
             <AuthButton isLoggedIn={isLoggedIn} />
@@ -41,7 +41,7 @@ export async function Header() {
 
           {/* Mobile Navigation */}
           <div className="md:hidden">
-            <MobileMenu />
+            <MobileMenu isLoggedIn={isLoggedIn} />
           </div>
         </div>
       </Container>

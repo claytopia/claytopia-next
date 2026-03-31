@@ -8,8 +8,9 @@ import Link from 'next/link';
 import { navItems } from '../config/navigation';
 
 import { Container } from './Container';
+import { AuthButton } from './AuthButton';
 
-export function MobileMenu() {
+export function MobileMenu({ isLoggedIn }: { isLoggedIn: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -104,6 +105,23 @@ export function MobileMenu() {
                     </Link>
                   </li>
                 ))}
+                {isLoggedIn && (
+                  <li>
+                    <Link
+                      href="/members"
+                      onClick={closeMenu}
+                      className="text-2xl font-serif font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      Members
+                    </Link>
+                  </li>
+                )}
+                <li>
+                  <AuthButton
+                    isLoggedIn={isLoggedIn}
+                    className="text-2xl font-serif font-medium text-foreground hover:text-primary transition-colors"
+                  />
+                </li>
               </ul>
 
               {/* Bottom section - contact info */}

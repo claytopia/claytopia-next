@@ -35,6 +35,30 @@ export async function createCard(prevState: unknown, formData: FormData) {
   return { success: true }
 }
 
+export async function deleteCard(cardId: string) {
+  const supabase = await createClient()
+  const { error } = await supabase
+    .from('club_cards')
+    .delete()
+    .eq('id', cardId)
+
+  if (error) return { error: 'Karte konnte nicht gelöscht werden.' }
+  revalidatePath('/admin/members')
+  return { success: true }
+}
+
+export async function updateCardValidUntil(cardId: string, validUntil: string) {
+  const supabase = await createClient()
+  const { error } = await supabase
+    .from('club_cards')
+    .update({ valid_until: validUntil })
+    .eq('id', cardId)
+
+  if (error) return { error: 'Gültigkeit konnte nicht aktualisiert werden.' }
+  revalidatePath('/admin/members')
+  return { success: true }
+}
+
 export async function updateCardUnits(cardId: string, usedUnits: number) {
   const supabase = await createClient()
   const { error } = await supabase

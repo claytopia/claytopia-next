@@ -2,7 +2,8 @@ import { createClient, createServiceClient } from '@/lib/supabase/server'
 import { Container } from '@/app/components/Container'
 import { InviteMemberForm } from './InviteMemberForm'
 import { CardForm } from './CardForm'
-import { updateCardUnits } from './actions'
+import { updateCardUnits, updateCardValidUntil } from './actions'
+import { DeleteCardButton } from './DeleteCardButton'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = { title: 'Mitglieder – Admin' }
@@ -78,9 +79,16 @@ export default async function AdminMembersPage() {
                       <span className="text-xs font-medium text-foreground w-16">
                         {cardTypeLabel[card.type] ?? card.type}
                       </span>
-                      <span className="text-xs text-foreground-muted flex-1">
-                        Gültig bis {new Date(card.valid_until).toLocaleDateString('de-DE')}
-                      </span>
+                      <form action={async (fd: FormData) => {
+                        'use server'
+                        await updateCardValidUntil(card.id, fd.get('valid_until') as string)
+                      }} className="flex items-center gap-2 text-xs flex-1">
+                        <span className="text-foreground-muted">Gültig bis:</span>
+                        <input name="valid_until" type="date"
+                          defaultValue={card.valid_until}
+                          className="border border-border rounded-sm px-1 py-0.5 text-xs bg-background" />
+                        <button type="submit" className="text-xs text-primary hover:underline">Speichern</button>
+                      </form>
                       <form action={async (fd: FormData) => {
                         'use server'
                         await updateCardUnits(card.id, Number(fd.get('used_units')))
@@ -92,6 +100,7 @@ export default async function AdminMembersPage() {
                         <span className="text-foreground-muted">/ {card.total_units}</span>
                         <button type="submit" className="text-xs text-primary hover:underline">Speichern</button>
                       </form>
+                      <DeleteCardButton cardId={card.id} />
                     </div>
                   ))}
                 </div>

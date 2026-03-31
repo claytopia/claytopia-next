@@ -1,7 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { Container } from '@/app/components/Container'
 import { SessionForm } from './SessionForm'
-import { deleteSession } from './actions'
+import { DeleteSessionButton } from './DeleteSessionButton'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = { title: 'Termine – Admin' }
@@ -58,12 +58,11 @@ export default async function AdminSessionsPage() {
                           {count}/{s.max_participants} Plätze · {names.join(', ') || 'keine Anmeldungen'}
                         </p>
                       </div>
-                      <form action={async () => { 'use server'; await deleteSession(s.id) }}>
-                        <button type="submit"
-                          className="text-xs text-foreground-muted border border-border px-3 py-1.5 rounded-sm hover:border-red-400 hover:text-red-600 transition-colors">
-                          Löschen
-                        </button>
-                      </form>
+                      <DeleteSessionButton
+                        sessionId={s.id}
+                        attendeeCount={count}
+                        attendeeNames={names}
+                      />
                     </div>
                   )
                 })}

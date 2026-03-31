@@ -12,7 +12,7 @@ export function ResetPasswordForm() {
     const email = new FormData(e.currentTarget).get('email') as string
     const supabase = createClient()
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/update-password`,
+      redirectTo: `${window.location.origin}/auth/callback?next=/update-password`,
     })
     setStatus(error ? 'error' : 'done')
   }
