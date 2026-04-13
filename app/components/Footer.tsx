@@ -8,7 +8,7 @@ export function Footer() {
           {/* Contact info */}
           <div className="text-sm text-foreground-muted">
             <p className="font-medium text-foreground">Claytopia</p>
-            <p>Keramik-Atelier</p>
+            <p>Keramik-Werkraum</p>
           </div>
 
           {/* Quick links placeholder - will be populated in Phase 2 */}

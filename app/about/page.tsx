@@ -3,7 +3,7 @@ import { Container } from '../components/Container';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Über Claytopia - Pia & das Atelier",
+  title: "Über Claytopia - Pia & den Werkraum",
   description: "Erfahre mehr über Claytopia, Pia und die Philosophie dahinter. Ein Raum für Kreativität, Entspannung und Töpfern ohne Druck.",
 };
 
@@ -16,7 +16,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/img/about/atelier01.png"
-            alt="Claytopia Atelier"
+            alt="Claytopia Werkraum"
             fill
             className="object-cover"
             priority

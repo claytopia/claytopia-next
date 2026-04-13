@@ -28,7 +28,7 @@ Glasurbrand (Temperatur nach Wahl): 110,-€
 
 
 ## So funktioniert's
-Melde dich gerne per E-Mail, Signal oder WhatsApp, um einen Termin zur Übergabe deiner gut durchgetrockneten Stücke in meinem Atelier zu vereinbaren.
+Melde dich gerne per E-Mail, Signal oder WhatsApp, um einen Termin zur Übergabe deiner gut durchgetrockneten Stücke in meinem Werkraum zu vereinbaren.
 
 Ich brenne, sobald ein Ofen vollständig befüllt ist. Den genauen Zeitpunkt kann ich im Voraus meist nicht genau festlegen – in der Regel musst du aber nicht länger als 3 Wochen auf deine gebrannten Werke warten.
 

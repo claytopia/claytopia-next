@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Clay Club - Claytopia",
-  description: "Der Clay Club: Dein offenes Keramik-Atelier in Rösrath. Flexibel töpfern in Gemeinschaft.",
+  description: "Der Clay Club: Dein offener Keramik-Werkraum in Rösrath. Flexibel töpfern in Gemeinschaft.",
 };
 
 export default function ClayClubPage() {

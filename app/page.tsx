@@ -11,7 +11,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/img/20241001_133949.jpg"
-            alt="Claytopia Atelier"
+            alt="Claytopia Werkraum"
             fill
             className="object-cover"
             priority
@@ -53,13 +53,13 @@ export default function Home() {
             <div className="order-2 md:order-1 relative aspect-[4/5] md:aspect-square">
               <Image
                 src="/img/about/aboutme.png" 
-                alt="Pia im Atelier"
+                alt="Pia im Werkraum"
                 fill
                 className="object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
             <div className="order-1 md:order-2 space-y-6">
-              <span className="text-primary font-medium tracking-widest uppercase text-sm">Über Uns</span>
+              <span className="text-primary font-medium tracking-widest uppercase text-sm">Über mich</span>
               <h2 className="font-serif text-4xl md:text-5xl text-foreground">
                 Handmade with Love.
               </h2>
@@ -87,9 +87,10 @@ export default function Home() {
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="font-serif text-3xl md:text-4xl mb-4">Mein Angebot</h2>
-            <p className="text-foreground-muted">
+            {/* <p className="text-foreground-muted">
               Finde das passende Angebot für deine kreative Reise.
             </p>
+            */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -106,7 +107,7 @@ export default function Home() {
               <div>
                 <h3 className="font-serif text-2xl mb-2 group-hover:text-primary transition-colors">Clay Club</h3>
                 <p className="text-foreground-muted text-sm leading-relaxed">
-                  Jeden Dienstag und Donnerstag Abend, sowie Freitag Vormittag, öffne ich die Türen meines Ateliers für den Clay Club. In diesem freien Töpferangebot kannst du in kleiner, netter Runde deine eigenen Ideen, in deinem eigenen Tempo umsetzen.                </p>
+                  Jeden Dienstag und Donnerstag Abend, sowie Freitag Vormittag, öffne ich die Türen meines Werkraums für den Clay Club. In diesem freien Töpferangebot kannst du in kleiner, netter Runde deine eigenen Ideen, in deinem eigenen Tempo umsetzen.                </p>
               </div>
             </a>
 

@@ -80,7 +80,7 @@ export function ContactForm() {
           required
           rows={5}
           className="w-full px-4 py-3 bg-white border border-stone-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all rounded-sm resize-none"
-          placeholder="Wie können wir dir helfen?"
+          placeholder="Wie kann ich dir helfen?"
         />
       </div>
 

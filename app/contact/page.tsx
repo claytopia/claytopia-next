@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Kontakt - Claytopia",
-  description: "Nimm Kontakt auf mit Claytopia. Wir freuen uns auf deine Nachricht! Atelier in Rösrath-Hoffnungsthal.",
+  description: "Nimm Kontakt auf mit Claytopia. Wir freuen uns auf deine Nachricht! Keramik-Werkraum in Rösrath-Hoffnungsthal.",
 };
 
 export default function ContactPage() {
@@ -29,7 +29,7 @@ export default function ContactPage() {
             Kontakt
           </h1>
           <p className="text-xl md:text-2xl font-light tracking-wide max-w-2xl mx-auto text-white/90">
-            Wir freuen uns von dir zu hören.
+            Ich freue mich von dir zu hören.
           </p>
         </Container>
       </section>
@@ -43,10 +43,10 @@ export default function ContactPage() {
             <div className="space-y-12">
               
               <div>
-                <h2 className="font-serif text-3xl mb-6 text-foreground">Hier findest du uns</h2>
+                <h2 className="font-serif text-3xl mb-6 text-foreground">Hier findest du mich</h2>
                 <div className="space-y-6 text-lg text-foreground-muted">
                   <p>
-                    <strong>Claytopia Keramik-Atelier</strong><br/>
+                    <strong>Claytopia Keramik-Werkraum</strong><br/>
                     Stöcker Weg 54<br/>
                     51503 Rösrath
                   </p>
@@ -64,7 +64,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <h3 className="font-serif text-2xl text-foreground">Öffnungszeiten</h3>
                 <p className="text-foreground-muted">
-                  Unser Atelier ist während der Clay Club Zeiten und zu Workshops geöffnet.<br/>
+                  Der Werkraum ist während der Clay Club Zeiten und zu Workshops geöffnet.<br/>
                   Besuche außerhalb dieser Zeiten bitte nur nach Vereinbarung.
                 </p>
                 <ul className="text-sm space-y-1 text-foreground-muted mt-2">
@@ -93,7 +93,7 @@ export default function ContactPage() {
 
             {/* Right Column: Contact Form */}
             <div className="bg-stone-50 p-8 md:p-10 rounded-sm">
-              <h2 className="font-serif text-3xl mb-2 text-foreground">Schreib uns</h2>
+              <h2 className="font-serif text-3xl mb-2 text-foreground">Schreib mir</h2>
               <p className="text-foreground-muted mb-8">
                 Du hast Fragen zu Workshops, dem Clay Club oder möchtest einfach Hallo sagen?
               </p>

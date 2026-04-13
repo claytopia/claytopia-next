@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Impressum - Claytopia",
-  description: "Impressum und Anbieterkennzeichnung von Claytopia Keramik-Atelier.",
+  description: "Impressum und Anbieterkennzeichnung von Claytopia Keramik-Werkraum.",
 };
 
 export default function ImpressumPage() {
@@ -18,7 +18,7 @@ export default function ImpressumPage() {
               <h2 className="font-serif text-2xl text-foreground mb-3">Angaben gemäß § 5 TMG</h2>
               <p className="text-foreground-muted leading-relaxed">
                 Pia Kadasch<br />
-                Claytopia Keramik-Atelier<br />
+                Claytopia Keramik-Werkraum<br />
                 Stöcker Weg 54<br />
                 51503 Rösrath
               </p>

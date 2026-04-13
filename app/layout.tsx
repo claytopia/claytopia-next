@@ -18,8 +18,8 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Claytopia - Keramik Atelier",
-  description: "Keramik-Atelier in Rösrath. Clay Club, Brennservice, Workshops und Events.",
+  title: "Claytopia - Keramik Werkraum",
+  description: "Keramik-Werkraum, Keramik-Atelier in Rösrath. Clay Club, Brennservice, Workshops und Events.",
 };
 
 export default function RootLayout({
