@@ -52,7 +52,7 @@ export default async function AdminSessionsPage() {
                   const count = countBySession[s.id] ?? 0
                   const names = namesBySession[s.id] ?? []
                   return (
-                    <div key={s.id} className="border border-border rounded-sm p-4 gap-4">
+                    <div key={s.id} className="border border-border rounded-sm p-4">
                       <div className="flex justify-between items-center gap-4">
                         <div>
                           <p className="font-medium text-foreground text-sm">{formatDate(s.starts_at)} Uhr</p>
