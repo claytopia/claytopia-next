@@ -45,7 +45,7 @@ export function LoginForm() {
 
       {/* Magic link */}
       <form action={magicAction} className="space-y-4">
-        <h2 className="font-serif text-xl text-foreground">Magic Link anfordern</h2>
+        <h2 className="font-serif text-xl text-foreground">Einmal-Link zum Einloggen anfordern</h2>
         <p className="text-sm text-foreground-muted">Wir senden dir einen Einmal-Link per E-Mail.</p>
         <div>
           <label className="block text-sm font-medium text-foreground mb-1">E-Mail</label>
