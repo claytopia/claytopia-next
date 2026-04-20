@@ -60,6 +60,7 @@ export async function updateSessionNote(sessionId: string, prevState: unknown, f
 
   if (error) return { error: 'Kommentar konnte nicht gespeichert werden.' }
 
+  // /admin only shows session counts, not notes — no revalidation needed there
   revalidatePath('/admin/sessions')
   revalidatePath('/members')
   return { success: true }
