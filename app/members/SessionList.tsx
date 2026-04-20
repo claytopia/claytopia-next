@@ -7,6 +7,7 @@ interface SessionWithBooking {
   id: string
   starts_at: string
   max_participants: number
+  note: string | null
   attendeeNames: string[]
   activeBookingCount: number
   myBookingId: string | null
@@ -67,6 +68,9 @@ export function SessionList({ sessions, hasActiveCard }: {
             className={`border border-border rounded-sm p-4 flex items-center justify-between gap-4 ${full && !isBooked ? 'opacity-60 bg-background-alt' : 'bg-background'}`}>
             <div className="min-w-0">
               <p className="font-medium text-foreground">{formatBerlinTime(session.starts_at)} Uhr</p>
+              {session.note && (
+                <p className="text-sm text-foreground-muted italic mt-0.5">{session.note}</p>
+              )}
               <p className="text-sm text-foreground-muted mt-0.5">
                 {session.attendeeNames.length > 0
                   ? `${session.attendeeNames.join(', ')} · `
