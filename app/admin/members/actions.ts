@@ -70,3 +70,12 @@ export async function updateCardUnits(cardId: string, usedUnits: number) {
   revalidatePath('/admin/members')
   return { success: true }
 }
+
+export async function resendInvitation(email: string) {
+  const serviceSupabase = createServiceClient()
+  const { error } = await serviceSupabase.auth.admin.inviteUserByEmail(email, {
+    redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback?next=/invite`,
+  })
+  if (error) return { error: `Einladung fehlgeschlagen: ${error.message}` }
+  return { success: `Einladungsmail erneut an ${email} gesendet.` }
+}
