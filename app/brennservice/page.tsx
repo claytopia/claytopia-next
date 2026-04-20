@@ -126,7 +126,7 @@ export default function BrennservicePage() {
                   <div className="flex gap-4">
                     <span className="font-serif text-4xl text-primary/30 font-bold">1</span>
                     <p>
-                      Melde dich gerne per E-Mail, Signal oder WhatsApp, um einen Termin zur Übergabe deiner gut durchgetrockneten Stücke in meinem Atelier zu vereinbaren.
+                      Melde dich gerne per E-Mail, Signal oder WhatsApp, um einen Termin zur Übergabe deiner gut durchgetrockneten Stücke in meinem Werkraum zu vereinbaren.
                     </p>
                   </div>
                   <div className="flex gap-4">

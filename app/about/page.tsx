@@ -3,7 +3,7 @@ import { Container } from '../components/Container';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Über Claytopia - Pia & den Werkraum",
+  title: "Über Claytopia",
   description: "Erfahre mehr über Claytopia, Pia und die Philosophie dahinter. Ein Raum für Kreativität, Entspannung und Töpfern ohne Druck.",
 };
 
@@ -15,13 +15,13 @@ export default function AboutPage() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/img/about/atelier01.png"
+            src="/img/about/20250827_122747.jpg"
             alt="Claytopia Werkraum"
             fill
-            className="object-cover"
+            className="object-cover contrast-125 saturate-150 brightness-90"
             priority
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-amber-950/35" />
         </div>
         <Container className="relative z-10 text-center text-white">
           <h1 className="font-serif text-5xl md:text-7xl mb-4 tracking-tight drop-shadow-lg">
@@ -73,20 +73,18 @@ export default function AboutPage() {
       {/* MISSION SECTION */}
       <section className="py-20 bg-background-alt">
         <Container>
-          <div className="max-w-4xl mx-auto mb-16 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl mb-6 text-foreground">CLAYTOPIA - ein Raum für alle</h2>
-            <div className="prose prose-lg text-foreground-muted mx-auto">
-              <p>
-                Mit CLAYTOPIA möchte ich genau diesen Flow weitergeben. Deshalb ist CLAYTOPIA kein klassisches Töpferatelier – hier geht es nicht darum, perfekte Stücke zu produzieren, Keramik zu verkaufen oder Kurse nach Leistungsstand zu absolvieren. Vielmehr möchte ich einen Raum bieten, in dem du kreativ sein kannst – frei von Druck, mit Zeit für dich und Platz für deine Ideen. Hier darf ausprobiert, verworfen, neu gedacht, gemeinsam gelernt und individuell gestaltet werden.
-              </p>
-            </div>
+          <div className="max-w-4xl mx-auto space-y-6 text-lg text-foreground-muted leading-relaxed mb-16">
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground">CLAYTOPIA - ein Raum für alle</h2>
+            <p>
+              Mit CLAYTOPIA möchte ich genau diesen Flow weitergeben. Deshalb ist CLAYTOPIA kein klassisches Töpferatelier – hier geht es nicht darum, perfekte Stücke zu produzieren, Keramik zu verkaufen oder Kurse nach Leistungsstand zu absolvieren. Vielmehr möchte ich einen Raum bieten, in dem du kreativ sein kannst – frei von Druck, mit Zeit für dich und Platz für deine Ideen. Hier darf ausprobiert, verworfen, neu gedacht, gemeinsam gelernt und individuell gestaltet werden.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <div className="relative aspect-[4/3] rounded-sm overflow-hidden">
                <Image 
                 src="/img/about/atelier02.png" 
-                alt="Atelier Detail" 
+                alt="Werkraum Detail" 
                 fill 
                 className="object-cover"
               />
@@ -94,7 +92,7 @@ export default function AboutPage() {
              <div className="relative aspect-[4/3] rounded-sm overflow-hidden">
                <Image 
                 src="/img/about/atelier03.png" 
-                alt="Atelier Stimmung" 
+                alt="Werkraum Stimmung" 
                 fill 
                 className="object-cover"
               />

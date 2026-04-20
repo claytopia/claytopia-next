@@ -13,7 +13,7 @@ Du kannst alle Materialien und Werkzeuge vor Ort nutzen
 Ton und Glasuren sind im Preis inbegriffen
 
 ## Mitmachen
-Der Clay Club findet an folgenden Tagen in meinem Atelier in Rösrath-Hoffnungsthal statt:
+Der Clay Club findet an folgenden Tagen in meinem Werkraum in Rösrath-Hoffnungsthal statt:
 
 Dienstags: 19 - 22 Uhr
 Donnerstags: 19 - 22 Uhr
@@ -29,7 +29,7 @@ Schnuppertermin: 25,-€ (maximal 2x möglich. Beim anschließenden Kauf einer C
 + individuelle Kosten für Brände
   Die Club-Karten sind ab Kaufdatum 6 Monate gültig und flexibel einsetzbar. Sie sind personenbezogen und nicht übertragbar. Allerdings könnt ihr euch eine Karte teilen – bei der 5er-Karte mit bis zu zwei, bei der 10er-Karte mit bis zu drei Personen. Voraussetzung ist, dass alle Namen bereits beim Kauf der Karte angegeben werden.
 
-Im Preis enthalten ist die Nutzung aller Werkzeuge und Materialien in meinem Atelier – inklusive Ton und Glasuren. Die meisten meiner Glasuren sind tafelgeschirrgeeignet, mit nur wenigen Ausnahmen.
+Im Preis enthalten ist die Nutzung aller Werkzeuge und Materialien in meinem Werkraum – inklusive Ton und Glasuren. Die meisten meiner Glasuren sind tafelgeschirrgeeignet, mit nur wenigen Ausnahmen.
 
 Die Brennkosten werden zusätzlich zum Kartenpreis berechnet und richten sich danach, wie viel du produzierst. Da du bei jedem Termin selbst entscheidest, wie viel du töpferst oder glasierst, kannst du dein eigenes Tempo bestimmen – ohne finanzielle Nachteile.
 

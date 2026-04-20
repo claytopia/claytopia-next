@@ -34,7 +34,7 @@ Alternativ kannst du deine Stücke im Clay Club selbst glasieren. In diesem Fall
 
 
 ## Individuelle Workshops
-Individuelle Workshops sind für Gruppen von 1 bis 10 Personen buchbar. Der Preis richtet sich nach dem zeitlichen Umfang, der Teilnehmerzahl und dem gewünschten Aufwand. Ein Workshop sollte mindestens 2,5 Stunden umfassen. Der Workshop kann in meinem Atelier stattfinden – oder je nach Möglichkeiten auch außer Haus.
+Individuelle Workshops sind für Gruppen von 1 bis 10 Personen buchbar. Der Preis richtet sich nach dem zeitlichen Umfang, der Teilnehmerzahl und dem gewünschten Aufwand. Ein Workshop sollte mindestens 2,5 Stunden umfassen. Der Workshop kann in meinem Werkraum stattfinden – oder je nach Möglichkeiten auch außer Haus.
 
 Für euer persönliches Töpfer-Erlebnis erstelle ich euch gerne ein individuelles Angebot – ganz nach euren Vorstellungen.
 

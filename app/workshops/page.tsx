@@ -144,7 +144,7 @@ export default function WorkshopsPage() {
                      <li>Schrühbrand & einfarbige Glasur durch mich & Glasurbrand</li>
                    </ul>
                    <p className="italic text-xs">
-                     Alternativ: Wenn du deine Keramik selbst farbig glasieren möchtest, kannst du das im Rahmen des Clay Clubs machen.
+                     Alternative: wenn ihr eure erstellte Keramik lieber selbst glasieren möchtet, könnt ihr das im Rahmen des ClayClubs machen. 
                    </p>
                 </div>
               </div>
