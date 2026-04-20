@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { Container } from '@/app/components/Container'
 import { SessionForm } from './SessionForm'
 import { DeleteSessionButton } from './DeleteSessionButton'
+import { EditNoteForm } from './EditNoteForm'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = { title: 'Termine – Admin' }
@@ -17,7 +18,7 @@ export default async function AdminSessionsPage() {
   const supabase = await createClient()
   const { data: sessions } = await supabase
     .from('sessions')
-    .select('id, starts_at, max_participants')
+    .select('id, starts_at, max_participants, note')
     .order('starts_at', { ascending: true })
 
   const sessionIds = sessions?.map(s => s.id) ?? []
@@ -51,18 +52,21 @@ export default async function AdminSessionsPage() {
                   const count = countBySession[s.id] ?? 0
                   const names = namesBySession[s.id] ?? []
                   return (
-                    <div key={s.id} className="border border-border rounded-sm p-4 flex justify-between items-center gap-4">
-                      <div>
-                        <p className="font-medium text-foreground text-sm">{formatDate(s.starts_at)} Uhr</p>
-                        <p className="text-xs text-foreground-muted mt-0.5">
-                          {count}/{s.max_participants} Plätze · {names.join(', ') || 'keine Anmeldungen'}
-                        </p>
+                    <div key={s.id} className="border border-border rounded-sm p-4 gap-4">
+                      <div className="flex justify-between items-center gap-4">
+                        <div>
+                          <p className="font-medium text-foreground text-sm">{formatDate(s.starts_at)} Uhr</p>
+                          <p className="text-xs text-foreground-muted mt-0.5">
+                            {count}/{s.max_participants} Plätze · {names.join(', ') || 'keine Anmeldungen'}
+                          </p>
+                        </div>
+                        <DeleteSessionButton
+                          sessionId={s.id}
+                          attendeeCount={count}
+                          attendeeNames={names}
+                        />
                       </div>
-                      <DeleteSessionButton
-                        sessionId={s.id}
-                        attendeeCount={count}
-                        attendeeNames={names}
-                      />
+                      <EditNoteForm sessionId={s.id} currentNote={s.note} />
                     </div>
                   )
                 })}
