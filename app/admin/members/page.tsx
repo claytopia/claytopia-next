@@ -4,6 +4,7 @@ import { InviteMemberForm } from './InviteMemberForm'
 import { CardForm } from './CardForm'
 import { updateCardUnits, updateCardValidUntil } from './actions'
 import { DeleteCardButton } from './DeleteCardButton'
+import { ResendInviteButton } from './ResendInviteButton'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = { title: 'Mitglieder – Admin' }
@@ -65,6 +66,9 @@ export default async function AdminMembersPage() {
                       <p className="font-medium text-foreground-muted italic">
                         {emailById[profile.id] ?? '—'}
                         <span className="ml-2 text-xs font-normal bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-sm not-italic">Einladung ausstehend</span>
+                        {emailById[profile.id] && (
+                          <ResendInviteButton email={emailById[profile.id]} />
+                        )}
                       </p>
                     )}
                     <p className="text-sm text-foreground-muted">
