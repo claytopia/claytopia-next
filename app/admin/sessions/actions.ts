@@ -9,13 +9,15 @@ export async function createSession(prevState: unknown, formData: FormData) {
 
   if (!dateTime) return { error: 'Datum und Uhrzeit erforderlich.' }
 
+  const note = (formData.get('note') as string | null) || null
+
   const berlinDate = new Date(dateTime + ':00')
   const startsAt = berlinDate.toISOString()
 
   const supabase = await createClient()
   const { error } = await supabase
     .from('sessions')
-    .insert({ starts_at: startsAt, max_participants: maxParticipants })
+    .insert({ starts_at: startsAt, max_participants: maxParticipants, note })
 
   if (error) return { error: 'Termin konnte nicht erstellt werden.' }
 
@@ -43,6 +45,22 @@ export async function deleteSession(sessionId: string) {
 
   revalidatePath('/admin/sessions')
   revalidatePath('/admin')
+  revalidatePath('/members')
+  return { success: true }
+}
+
+export async function updateSessionNote(sessionId: string, prevState: unknown, formData: FormData) {
+  const note = (formData.get('note') as string | null) || null
+
+  const supabase = await createClient()
+  const { error } = await supabase
+    .from('sessions')
+    .update({ note })
+    .eq('id', sessionId)
+
+  if (error) return { error: 'Kommentar konnte nicht gespeichert werden.' }
+
+  revalidatePath('/admin/sessions')
   revalidatePath('/members')
   return { success: true }
 }
