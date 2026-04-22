@@ -15,13 +15,13 @@ export default function AboutPage() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/img/about/20250827_122747.jpg"
+            src="/img/about/20250601_170245.jpg"
             alt="Claytopia Werkraum"
             fill
-            className="object-cover contrast-125 saturate-150 brightness-90"
+            className="object-cover contrast-125 saturate-110 brightness-90"
             priority
           />
-          <div className="absolute inset-0 bg-amber-950/35" />
+          <div className="absolute inset-0 bg-stone-900/35" />
         </div>
         <Container className="relative z-10 text-center text-white">
           <h1 className="font-serif text-5xl md:text-7xl mb-4 tracking-tight drop-shadow-lg">

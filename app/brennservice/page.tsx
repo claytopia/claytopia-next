@@ -15,7 +15,7 @@ export default function BrennservicePage() {
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/img/brennservice/brennservice.jpg"
+            src="/img/brennservice/20251123_201419.jpg"
             alt="Brennservice Ofen"
             fill
             className="object-cover"

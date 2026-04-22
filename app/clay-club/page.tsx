@@ -105,7 +105,7 @@ export default function ClayClubPage() {
               </div>
                <div className="relative aspect-[4/3] rounded-sm overflow-hidden">
                  <Image 
-                    src="/img/clayclub/20250521_133103.jpg" 
+                    src="/img/clayclub/20250828_113549.jpg" 
                     alt="Tonarbeiten" 
                     fill 
                     className="object-cover"
