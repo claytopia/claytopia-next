@@ -83,7 +83,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <div className="relative aspect-[4/3] rounded-sm overflow-hidden">
                <Image 
-                src="/img/about/atelier02.png" 
+                src="/img/about/IMG_1090.jpg" 
                 alt="Werkraum Detail" 
                 fill 
                 className="object-cover"
@@ -91,7 +91,7 @@ export default function AboutPage() {
             </div>
              <div className="relative aspect-[4/3] rounded-sm overflow-hidden">
                <Image 
-                src="/img/about/atelier03.png" 
+                src="/img/about/IMG_1104.jpg" 
                 alt="Werkraum Stimmung" 
                 fill 
                 className="object-cover"
