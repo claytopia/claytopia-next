@@ -112,36 +112,6 @@ export default function WorkshopsPage() {
       </section>
 */}
 
-      {/* UPCOMING WORKSHOPS */}
-      <section className="py-16 bg-background-alt">
-        <Container>
-          <h2 className="font-serif text-3xl md:text-4xl mb-12 text-center">Kommende Workshops</h2>
-
-          <div className="bg-background rounded-sm shadow-sm overflow-hidden flex flex-col lg:flex-row">
-            <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                <h3 className="font-serif text-2xl md:text-3xl text-primary">Lieblingstasse</h3>
-                <div className="flex flex-col items-start md:items-end gap-1">
-                  <span className="font-serif text-3xl md:text-4xl font-semibold text-primary">69 €</span>
-                  <span className="text-sm text-foreground-muted">pro Person, inkl. Material</span>
-                </div>
-              </div>
-
-              <p className="text-lg font-medium text-foreground">
-                28.08.2026 · 13 bis 16 Uhr
-              </p>
-
-              <div className="pt-6">
-                <a href="mailto:hello@claytopia.de?subject=Anmeldung Lieblingstasse" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
-                  Jetzt Anfragen
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </Container>
-      </section>
-
       {/* INDIVIDUAL WORKSHOPS */}
       <section className="py-20">
         <Container>
