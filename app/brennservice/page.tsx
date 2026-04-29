@@ -60,7 +60,7 @@ export default function BrennservicePage() {
               <div className="bg-stone-50 p-8 rounded-sm">
                 <h3 className="font-serif text-2xl mb-4 text-primary">Glasurbrand (1040°)</h3>
                 <p className="text-foreground-muted">
-                  Einbrennen der Glasur im sogenannten Niedrigbrand. Bei dieser Brenntemperatur werden die Farben kräftiger und strahlender, als im Hochbrand. Beachte aber, dass die Keramik danach nicht wasserdicht ist!
+                  Einbrennen der Glasur im sogenannten Niedrigbrand. Bei dieser Brenntemperatur werden die Farben kräftiger und bleiben stabiler als im Hochbrand. Beachte aber, dass die Keramik ansich in der Regel danach noch nicht wasserdicht ist. Bei Niedrigbrand kann es zu längeren Wartezeiten kommen, da ich nur wenige Kund*Innen habe, die in diesem Bereich brennen.
                 </p>
               </div>
               <div className="bg-stone-50 p-8 rounded-sm">
