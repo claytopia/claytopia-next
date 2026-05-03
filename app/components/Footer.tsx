@@ -13,6 +13,7 @@ export function Footer() {
 
           {/* Quick links placeholder - will be populated in Phase 2 */}
           <nav className="flex gap-4 text-sm text-foreground-muted">
+            <a href="/newsletter" className="hover:text-foreground">Newsletter</a>
             <a href="/impressum" className="hover:text-foreground">Impressum</a>
             <a href="/datenschutz" className="hover:text-foreground">Datenschutz</a>
           </nav>

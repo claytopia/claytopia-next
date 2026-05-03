@@ -12,7 +12,7 @@ export function SessionForm() {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-foreground mb-1">Datum & Uhrzeit</label>
-          <input name="starts_at" type="datetime-local" required
+          <input name="starts_at" type="datetime-local" required defaultValue={`${new Date().toLocaleDateString('en-CA')}T19:00`}
             className="w-full border border-border rounded-sm px-3 py-2 bg-background text-foreground text-sm focus:outline-none focus:ring-1 focus:ring-primary" />
         </div>
         <div>
