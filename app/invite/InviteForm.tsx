@@ -2,12 +2,13 @@
 
 import { useEffect, useState, useActionState } from 'react'
 import { createClient } from '@/lib/supabase/client'
-import { completeInvite } from './actions'
+import { completeInvite, requestNewInvite } from './actions'
 
 export function InviteForm() {
   const [sessionReady, setSessionReady] = useState(false)
   const [sessionError, setSessionError] = useState<string | null>(null)
   const [state, action, pending] = useActionState(completeInvite, null)
+  const [resendState, resendAction, resendPending] = useActionState(requestNewInvite, null)
 
   useEffect(() => {
     const supabase = createClient()
@@ -21,7 +22,7 @@ export function InviteForm() {
 
     init.then(({ data: { session }, error }) => {
       if (error || !session) {
-        setSessionError('Ungültiger oder abgelaufener Einladungslink. Bitte kontaktiere Pia.')
+        setSessionError('Dein Einladungslink ist abgelaufen.')
       } else {
         setSessionReady(true)
       }
@@ -29,7 +30,32 @@ export function InviteForm() {
   }, [])
 
   if (sessionError) {
-    return <p className="text-sm text-red-600">{sessionError}</p>
+    return (
+      <div className="space-y-4">
+        <p className="text-sm text-red-600">{sessionError}</p>
+        <p className="text-sm text-foreground-muted">
+          Gib deine E-Mail-Adresse ein, um einen neuen Einladungslink zu erhalten:
+        </p>
+        <form action={resendAction} className="space-y-3">
+          <input
+            name="email"
+            type="email"
+            required
+            placeholder="deine@email.de"
+            className="w-full border border-border rounded-sm px-3 py-2 bg-background text-foreground text-sm focus:outline-none focus:ring-1 focus:ring-primary"
+          />
+          {resendState?.error && <p className="text-sm text-red-600">{resendState.error}</p>}
+          {resendState?.success && <p className="text-sm text-green-700">{resendState.success}</p>}
+          <button
+            type="submit"
+            disabled={resendPending}
+            className="w-full bg-primary text-primary-foreground py-2 rounded-sm text-sm font-medium hover:bg-primary/90 transition-colors disabled:opacity-50"
+          >
+            {resendPending ? 'Wird gesendet...' : 'Neuen Einladungslink anfordern'}
+          </button>
+        </form>
+      </div>
+    )
   }
 
   if (!sessionReady) {

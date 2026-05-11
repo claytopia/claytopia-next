@@ -1,8 +1,29 @@
 'use server'
 
-import { createClient } from '@/lib/supabase/server'
-import { log } from 'console'
+import { createClient, createServiceClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
+
+export async function requestNewInvite(prevState: unknown, formData: FormData) {
+  const email = (formData.get('email') as string)?.trim()
+  if (!email) return { error: 'Bitte E-Mail-Adresse eingeben.' }
+
+  const serviceSupabase = createServiceClient()
+
+  // Verify user exists and has no profile yet (unregistered invite)
+  const { data: { users } } = await serviceSupabase.auth.admin.listUsers()
+  const user = users?.find(u => u.email === email)
+
+  if (!user) {
+    return { error: 'Diese E-Mail-Adresse wurde nicht eingeladen. Bitte kontaktiere Pia.' }
+  }
+
+  const { error } = await serviceSupabase.auth.admin.inviteUserByEmail(email, {
+    redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback?next=/invite`,
+  })
+
+  if (error) return { error: `Fehler beim Senden: ${error.message}` }
+  return { success: 'Neuer Einladungslink wurde an deine E-Mail gesendet!' }
+}
 
 export async function completeInvite(prevState: unknown, formData: FormData) {
   const firstName = (formData.get('first_name') as string).trim()
