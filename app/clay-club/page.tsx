@@ -83,7 +83,7 @@ export default function ClayClubPage() {
                     Du entscheidest flexibel, an welchen Tagen du teilnehmen möchtest – auch mehrmals pro Woche ist möglich. Die Teilnehmerzahl ist aktuell auf 5 Personen pro Termin begrenzt, es gilt: first come, first served.
                   </p>
                   <p>
-                    Die Anmeldung erfolgt über einen Terminplaner-Link, den du nach dem Kauf deiner ersten Club-Karte von mir erhältst. Kommst du zum ersten Mal, schreib mich gerne per Signal oder WhatsApp an.
+                    Die Anmeldung erfolgt über einen Buchungssystem, zu dem du nach dem Kauf deiner ersten Club-Karte Zugang erhältst. Kommst du zum ersten Mal, schreib mich gerne per Signal oder WhatsApp an.
                   </p>
                   <p className="text-sm italic">
                     Der Clay Club findet oft auch während der Ferien und an Feiertagen statt, alle Termine sind im Terminkalender einsehrbar. Für dich gibt es keine Zu- oder Absagefrist. Solltest du erst kurz vor Beginn merken, dass du es doch nicht schaffst, ist das gar kein Problem! Wir haben doch alle mal nen Durchhänger oder abends keine Energie mehr. Das Angebot ist bewusst so flexibel gestaltet, damit es Entspannung bringt und nicht zusätzlich Stress verursacht. Ich behalte mir vor, einen Termin abzusagen, wenn sich noch niemand angemeldet hat. 
@@ -137,7 +137,7 @@ export default function ClayClubPage() {
               <h3 className="font-serif text-2xl mb-2">10er Karte</h3>
               <p className="text-3xl font-light mb-4">200,-€</p>
               <p className="text-foreground-muted text-sm flex-grow">
-                Flexibel einsetzbar, 6 Monate gültig. Teilbar mit bis zu 3 Personen.
+                Flexibel einsetzbar, 6 Monate gültig. Bis zu 2 Personen können eine 10er-Karte nutzen.
               </p>
             </div>
 
@@ -154,11 +154,11 @@ export default function ClayClubPage() {
               <h3 className="font-serif text-2xl mb-2">5er Karte</h3>
               <p className="text-3xl font-light mb-4">120,-€</p>
               <p className="text-foreground-muted text-sm flex-grow">
-                 Flexibel einsetzbar, 6 Monate gültig. Teilbar mit bis zu 2 Personen.
+                 Flexibel einsetzbar, 6 Monate gültig.
               </p>
             </div>
 
-            {/* Schnuppertermin */}
+            {/* Einzeltermin */}
             <div className="bg-background p-6 rounded-sm shadow-sm flex flex-col">
               <div className="relative aspect-video mb-6 rounded-sm overflow-hidden bg-stone-100">
                 <Image 
@@ -168,10 +168,10 @@ export default function ClayClubPage() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="font-serif text-2xl mb-2">Schnuppertermin</h3>
+              <h3 className="font-serif text-2xl mb-2">Einzeltermin</h3>
               <p className="text-3xl font-light mb-4">30,-€</p>
               <p className="text-foreground-muted text-sm flex-grow">
-                Maximal 2x möglich. Beim anschließenden Kauf einer Club-Karte werden 30,-€ angerechnet.
+                Perfekt zum Schnuppern. Beim anschließenden Kauf einer Club-Karte werden 30,-€ angerechnet.
               </p>
             </div>
 
@@ -182,7 +182,7 @@ export default function ClayClubPage() {
               <strong>+ individuelle Kosten für Brände</strong>
             </p>
             <p>
-              Die Club-Karten sind ab Kaufdatum 6 Monate gültig und flexibel einsetzbar. Sie sind personenbezogen und nicht übertragbar. Allerdings könnt ihr euch eine Karte teilen – Voraussetzung ist, dass alle Namen bereits beim Kauf der Karte angegeben werden.
+              Die Club-Karten sind ab Kaufdatum 6 Monate gültig und flexibel einsetzbar. Sie sind personenbezogen und nicht übertragbar. Eine 10er-Karte könnt ihr jedoch zu zweit nutzen, sofern dies bereits bei Kauf angegeben wird.
             </p>
             <p>
               Im Preis enthalten ist die Nutzung aller Werkzeuge und Materialien in meinem Atelier – inklusive Ton und Glasuren. Die meisten meiner Glasuren sind tafelgeschirrgeeignet.
