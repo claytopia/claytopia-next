@@ -44,7 +44,171 @@ export default function WorkshopsPage() {
         </Container>
       </section>
 
-      {/* UPCOMING WORKSHOPS
+      {/* UPCOMING WORKSHOPS */}
+      <section className="py-16 bg-background-alt">
+        <Container>
+          <h2 className="font-serif text-3xl md:text-4xl mb-12 text-center">Kommende Workshops</h2>
+
+          <div className="space-y-12">
+
+          <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
+            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
+               <Image
+                src="/img/brennservice/20251123_201419.jpg"
+                alt="Töpfer deine Tasse"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                 <div className="space-y-2">
+                   <span className="inline-block uppercase tracking-widest text-xs font-semibold text-primary/80 bg-primary/10 px-3 py-1 rounded-sm">
+                     Themenworkshop
+                   </span>
+                   <h3 className="font-serif text-3xl md:text-4xl text-primary">Töpfer deine Tasse</h3>
+                 </div>
+                 <span className="bg-primary text-white rounded-full w-24 h-24 flex items-center justify-center text-2xl font-bold shadow-md shrink-0">
+                   59&nbsp;€
+                 </span>
+              </div>
+
+              <p className="text-lg font-medium text-foreground">
+                14.06.2026 - 14 bis 17 Uhr
+              </p>
+
+              <div className="prose prose-lg text-foreground-muted">
+                {/* TODO: Workshop-Beschreibung hier einfügen */}
+                <p>
+                  Beschreibung folgt.
+                </p>
+              </div>
+
+              <div className="pt-6">
+                <a href="mailto:hello@claytopia.de?subject=Anmeldung Töpfer deine Tasse" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
+                  Jetzt Anfragen
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
+            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
+               <Image
+                src="/img/about/IMG_1104.jpg"
+                alt="Uhren und Schilder"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                 <div className="space-y-2">
+                   <span className="inline-block uppercase tracking-widest text-xs font-semibold text-primary/80 bg-primary/10 px-3 py-1 rounded-sm">
+                     Themenworkshop
+                   </span>
+                   <h3 className="font-serif text-3xl md:text-4xl text-primary">Uhren und Schilder</h3>
+                 </div>
+                 <span className="bg-primary text-white rounded-full w-24 h-24 flex items-center justify-center text-2xl font-bold shadow-md shrink-0">
+                   59&nbsp;€
+                 </span>
+              </div>
+
+              <p className="text-lg font-medium text-foreground">
+                12.07.2026 - 14 bis 17 Uhr
+              </p>
+
+              <div className="prose prose-lg text-foreground-muted">
+                {/* TODO: Workshop-Beschreibung hier einfügen */}
+                <p>
+                  Beschreibung folgt.
+                </p>
+              </div>
+
+              <div className="pt-6">
+                <a href="mailto:hello@claytopia.de?subject=Anmeldung Uhren und Schilder" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
+                  Jetzt Anfragen
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
+            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full bg-stone-100">
+              {/* TODO: Bild für diesen Themenworkshop einfügen */}
+            </div>
+            <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                 <div className="space-y-2">
+                   <span className="inline-block uppercase tracking-widest text-xs font-semibold text-primary/80 bg-primary/10 px-3 py-1 rounded-sm">
+                     Themenworkshop
+                   </span>
+                   <h3 className="font-serif text-3xl md:text-4xl text-primary">Thema wird noch bekannt gegeben</h3>
+                 </div>
+                 <span className="bg-primary text-white rounded-full w-24 h-24 flex items-center justify-center text-2xl font-bold shadow-md shrink-0">
+                   59&nbsp;€
+                 </span>
+              </div>
+
+              <p className="text-lg font-medium text-foreground">
+                11.10.2026 - 14 bis 17 Uhr
+              </p>
+
+              <div className="pt-6">
+                <a href="mailto:hello@claytopia.de?subject=Interesse am nächsten Themenworkshop" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
+                  Auf die Warteliste
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
+            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
+               <Image
+                src="/20251116_130246.jpg"
+                alt="Weihnachtswerkstatt"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                 <div className="space-y-2">
+                   <span className="inline-block uppercase tracking-widest text-xs font-semibold text-primary/80 bg-primary/10 px-3 py-1 rounded-sm">
+                     Themenworkshop
+                   </span>
+                   <h3 className="font-serif text-3xl md:text-4xl text-primary">Weihnachtswerkstatt</h3>
+                 </div>
+                 <span className="bg-primary text-white rounded-full w-24 h-24 flex items-center justify-center text-2xl font-bold shadow-md shrink-0">
+                   59&nbsp;€
+                 </span>
+              </div>
+
+              <p className="text-lg font-medium text-foreground">
+                22.11.2026 - 14 bis 17 Uhr
+              </p>
+
+              <div className="prose prose-lg text-foreground-muted">
+                {/* TODO: Workshop-Beschreibung hier einfügen */}
+                <p>
+                  Beschreibung folgt.
+                </p>
+              </div>
+
+              <div className="pt-6">
+                <a href="mailto:hello@claytopia.de?subject=Anmeldung Weihnachtswerkstatt" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
+                  Jetzt Anfragen
+                </a>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+        </Container>
+      </section>
+
+      {/* WEIHNACHTSWERKSTATT (vergangen — Template als Referenz)
       <section className="py-16 bg-background-alt">
         <Container>
           <h2 className="font-serif text-3xl md:text-4xl mb-12 text-center">Kommende Workshops</h2>
