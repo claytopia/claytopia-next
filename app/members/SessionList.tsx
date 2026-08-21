@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { bookSession, cancelBooking } from './actions'
+import { bookSession, cancelBooking, joinWaitlist, leaveWaitlist } from './actions'
 
 interface SessionWithBooking {
   id: string
@@ -11,6 +11,8 @@ interface SessionWithBooking {
   attendeeNames: string[]
   activeBookingCount: number
   myBookingId: string | null
+  waitlistCount: number
+  myWaitlistPosition: number | null
   hasActiveCard: boolean
 }
 
@@ -51,6 +53,21 @@ export function SessionList({ sessions, hasActiveCard }: {
     setLoadingId(null)
   }
 
+  async function handleJoinWaitlist(sessionId: string) {
+    setLoadingId(sessionId)
+    setErrors(e => ({ ...e, [sessionId]: '' }))
+    const result = await joinWaitlist(sessionId)
+    if (result?.error) setErrors(e => ({ ...e, [sessionId]: result.error }))
+    setLoadingId(null)
+  }
+
+  async function handleLeaveWaitlist(sessionId: string) {
+    setLoadingId(sessionId)
+    const result = await leaveWaitlist(sessionId)
+    if (result?.error) setErrors(e => ({ ...e, [sessionId]: result.error }))
+    setLoadingId(null)
+  }
+
   if (sessions.length === 0) {
     return <p className="text-foreground-muted">Keine kommenden Termine geplant.</p>
   }
@@ -81,6 +98,11 @@ export function SessionList({ sessions, hasActiveCard }: {
                       {freeSpots} {freeSpots === 1 ? 'Platz' : 'Plätze'} frei
                     </span>
                 }
+                {session.waitlistCount > 0 && (
+                  <span className="text-foreground-muted">
+                    {' · '}+{session.waitlistCount} auf der Warteliste
+                  </span>
+                )}
               </p>
               {errors[session.id] && <p className="text-xs text-red-600 mt-1">{errors[session.id]}</p>}
             </div>
@@ -97,8 +119,29 @@ export function SessionList({ sessions, hasActiveCard }: {
                     {loadingId === session.id ? '...' : 'Abmelden'}
                   </button>
                 )
+              ) : session.myWaitlistPosition ? (
+                <div className="flex flex-col items-end gap-1">
+                  <span className="text-sm text-primary font-medium">
+                    Warteliste · Platz {session.myWaitlistPosition}
+                  </span>
+                  <button
+                    onClick={() => handleLeaveWaitlist(session.id)}
+                    disabled={loadingId === session.id}
+                    className="text-xs text-foreground-muted hover:text-red-600 disabled:opacity-50">
+                    {loadingId === session.id ? '...' : 'Von Warteliste abmelden'}
+                  </button>
+                </div>
               ) : full ? (
-                <span className="text-sm text-foreground-muted">Voll</span>
+                !hasActiveCard ? (
+                  <span className="text-sm text-foreground-muted" title="Keine aktive Club-Karte">Keine Karte</span>
+                ) : (
+                  <button
+                    onClick={() => handleJoinWaitlist(session.id)}
+                    disabled={loadingId === session.id}
+                    className="text-sm border border-primary text-primary px-3 py-1.5 rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors disabled:opacity-50">
+                    {loadingId === session.id ? '...' : 'Auf die Warteliste'}
+                  </button>
+                )
               ) : !hasActiveCard ? (
                 <span className="text-sm text-foreground-muted" title="Keine aktive Club-Karte">Keine Karte</span>
               ) : (

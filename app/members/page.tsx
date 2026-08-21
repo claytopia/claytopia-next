@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { Container } from '../components/Container'
 import { SessionList } from './SessionList'
+import { buildDisplayNameMap, nameKey } from '@/lib/names'
 import Link from 'next/link'
 import { Metadata } from 'next'
 
@@ -27,20 +28,54 @@ export default async function MembersPage() {
   const { data: attendees } = sessionIds.length > 0
     ? await supabase
         .from('session_attendees')
-        .select('session_id, first_name')
+        .select('session_id, first_name, last_name')
         .in('session_id', sessionIds)
     : { data: [] }
+
+  // Disambiguate names across ALL members (the universe), so a member is shown
+  // with as much of their last name as needed to tell them apart from other
+  // members sharing the same first name — even when booked alone.
+  const { data: allProfiles } = await supabase
+    .from('profiles')
+    .select('first_name, last_name')
+
+  const displayNameMap = buildDisplayNameMap(
+    (allProfiles ?? [])
+      .filter(p => p.first_name)
+      .map(p => ({ firstName: p.first_name, lastName: p.last_name }))
+  )
 
   const bookingCountBySession: Record<string, number> = {}
   const namesBySession: Record<string, string[]> = {}
   for (const a of attendees ?? []) {
     bookingCountBySession[a.session_id] = (bookingCountBySession[a.session_id] ?? 0) + 1
-    namesBySession[a.session_id] = [...(namesBySession[a.session_id] ?? []), a.first_name]
+    // Guests (no last name / not a member) fall back to their first name.
+    const display = displayNameMap.get(nameKey(a.first_name, a.last_name)) ?? a.first_name
+    namesBySession[a.session_id] = [...(namesBySession[a.session_id] ?? []), display]
   }
 
   const myBookingBySession = Object.fromEntries(
     (myBookings ?? []).map(b => [b.session_id, b.id])
   )
+
+  // Waitlist: count per session + this member's position (1-based) if enrolled.
+  const { data: waitlistRows } = sessionIds.length > 0
+    ? await supabase
+        .from('waitlist')
+        .select('session_id, user_id, created_at')
+        .in('session_id', sessionIds)
+        .order('created_at', { ascending: true })
+    : { data: [] }
+
+  const waitlistCountBySession: Record<string, number> = {}
+  const myWaitlistPositionBySession: Record<string, number> = {}
+  for (const w of waitlistRows ?? []) {
+    const pos = (waitlistCountBySession[w.session_id] ?? 0) + 1
+    waitlistCountBySession[w.session_id] = pos
+    if (w.user_id === user!.id) {
+      myWaitlistPositionBySession[w.session_id] = pos
+    }
+  }
 
   const today = new Date().toISOString().split('T')[0]
   const { data: cards } = await supabase
@@ -56,6 +91,8 @@ export default async function MembersPage() {
     attendeeNames: namesBySession[s.id] ?? [],
     activeBookingCount: bookingCountBySession[s.id] ?? 0,
     myBookingId: myBookingBySession[s.id] ?? null,
+    waitlistCount: waitlistCountBySession[s.id] ?? 0,
+    myWaitlistPosition: myWaitlistPositionBySession[s.id] ?? null,
     hasActiveCard,
   }))
 

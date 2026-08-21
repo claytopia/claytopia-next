@@ -163,7 +163,10 @@ $$;
 
 -- ============================================================
 -- FUNCTION: cancel_booking (member) — now returns promoted user_id
+-- Return type changes from void -> uuid, so the old function must be
+-- dropped first (this only removes the function definition, not data).
 -- ============================================================
+drop function if exists cancel_booking(uuid, uuid);
 create or replace function cancel_booking(
   p_booking_id uuid,
   p_user_id    uuid
@@ -197,7 +200,10 @@ $$;
 
 -- ============================================================
 -- FUNCTION: admin_cancel_booking — now returns promoted user_id
+-- Return type changes from void -> uuid, so drop the old one first
+-- (removes only the function definition, not any data).
 -- ============================================================
+drop function if exists admin_cancel_booking(uuid);
 create or replace function admin_cancel_booking(p_booking_id uuid)
 returns uuid language plpgsql security definer as $$
 declare
