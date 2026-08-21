@@ -3,6 +3,7 @@ import { Container } from '@/app/components/Container'
 import { SessionForm } from './SessionForm'
 import { DeleteSessionButton } from './DeleteSessionButton'
 import { EditNoteForm } from './EditNoteForm'
+import { EditMaxParticipantsForm } from './EditMaxParticipantsForm'
 import { AdminAttendees } from './AdminAttendees'
 import { SessionList } from './SessionList'
 import { Metadata } from 'next'
@@ -72,6 +73,22 @@ export default async function AdminSessionsPage() {
     .filter(p => p.first_name) // exclude unregistered invites
     .map(p => ({ id: p.id, firstName: p.first_name, lastName: p.last_name }))
 
+  // Waitlist per session, in order, with member names
+  const { data: waitlistRows } = sessionIds.length > 0
+    ? await supabase
+        .from('waitlist')
+        .select('session_id, user_id, created_at')
+        .in('session_id', sessionIds)
+        .order('created_at', { ascending: true })
+    : { data: [] }
+
+  const waitlistBySession: Record<string, string[]> = {}
+  for (const w of waitlistRows ?? []) {
+    const p = profileById[w.user_id]
+    const name = p ? `${p.first_name} ${p.last_name}`.trim() : 'Unbekannt'
+    waitlistBySession[w.session_id] = [...(waitlistBySession[w.session_id] ?? []), name]
+  }
+
   const cards = (allCards ?? []).map(c => ({
     id: c.id,
     userId: c.user_id,
@@ -96,6 +113,7 @@ export default async function AdminSessionsPage() {
                   const sessionAttendees = attendeesBySession[s.id] ?? []
                   const count = sessionAttendees.length
                   const names = sessionAttendees.map(a => a.firstName)
+                  const waitlist = waitlistBySession[s.id] ?? []
                   return {
                     id: s.id,
                     isPast: new Date(s.starts_at) < now,
@@ -104,9 +122,13 @@ export default async function AdminSessionsPage() {
                         <div className="flex justify-between items-center gap-4">
                           <div>
                             <p className="font-medium text-foreground text-sm">{formatDate(s.starts_at)} Uhr</p>
-                            <p className="text-xs text-foreground-muted mt-0.5">
-                              {count}/{s.max_participants} Plätze
-                            </p>
+                            <div className="mt-1">
+                              <EditMaxParticipantsForm
+                                sessionId={s.id}
+                                currentMax={s.max_participants}
+                                activeCount={count}
+                              />
+                            </div>
                           </div>
                           <DeleteSessionButton
                             sessionId={s.id}
@@ -121,6 +143,18 @@ export default async function AdminSessionsPage() {
                           cards={cards}
                         />
                         <EditNoteForm sessionId={s.id} currentNote={s.note} />
+                        {waitlist.length > 0 && (
+                          <div className="mt-3 border-t border-border pt-2">
+                            <p className="text-xs font-medium text-foreground-muted mb-1">
+                              Warteliste ({waitlist.length})
+                            </p>
+                            <ol className="text-xs text-foreground-muted space-y-0.5 list-decimal list-inside">
+                              {waitlist.map((name, i) => (
+                                <li key={i}>{name}</li>
+                              ))}
+                            </ol>
+                          </div>
+                        )}
                       </div>
                     ),
                   }

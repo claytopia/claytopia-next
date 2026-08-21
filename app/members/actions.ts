@@ -2,7 +2,7 @@
 
 import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
-import { createTransporter, notificationReceiver } from '@/lib/mail'
+import { createTransporter, notificationReceiver, notifyWaitlistPromotion } from '@/lib/mail'
 
 async function notifyBooking(
   supabase: Awaited<ReturnType<typeof createClient>>,
@@ -88,14 +88,66 @@ export async function cancelBooking(bookingId: string) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { error: 'Nicht angemeldet.' }
 
-  const { error } = await supabase.rpc('cancel_booking', {
+  const { data: promotedUserId, error } = await supabase.rpc('cancel_booking', {
     p_booking_id: bookingId,
     p_user_id: user.id,
   })
 
   if (error) return { error: 'Stornierung fehlgeschlagen.' }
 
+  // A waitlisted member was auto-promoted into the freed seat → notify them.
+  if (promotedUserId) {
+    const { data: session } = await supabase
+      .from('bookings')
+      .select('session_id')
+      .eq('id', bookingId)
+      .single()
+    if (session?.session_id) {
+      await notifyWaitlistPromotion(promotedUserId as string, session.session_id)
+    }
+  }
+
   revalidatePath('/members')
   revalidatePath('/members/bookings')
+  return { success: true }
+}
+
+export async function joinWaitlist(sessionId: string) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return { error: 'Nicht angemeldet.' }
+
+  const { error } = await supabase.rpc('join_waitlist', {
+    p_session_id: sessionId,
+    p_user_id: user.id,
+  })
+
+  if (error) {
+    if (error.message.includes('No valid card'))
+      return { error: 'Du brauchst eine gültige Club-Karte mit freier Einheit.' }
+    if (error.message.includes('Already booked'))
+      return { error: 'Du bist bereits für diesen Termin gebucht.' }
+    if (error.message.includes('not full'))
+      return { error: 'Es sind noch Plätze frei – buche direkt.' }
+    return { error: 'Eintrag auf die Warteliste fehlgeschlagen.' }
+  }
+
+  revalidatePath('/members')
+  return { success: true }
+}
+
+export async function leaveWaitlist(sessionId: string) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return { error: 'Nicht angemeldet.' }
+
+  const { error } = await supabase.rpc('leave_waitlist', {
+    p_session_id: sessionId,
+    p_user_id: user.id,
+  })
+
+  if (error) return { error: 'Austragen fehlgeschlagen.' }
+
+  revalidatePath('/members')
   return { success: true }
 }

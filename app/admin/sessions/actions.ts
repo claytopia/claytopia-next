@@ -2,6 +2,7 @@
 
 import { createClient, createServiceClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
+import { notifyWaitlistPromotion } from '@/lib/mail'
 
 export async function createSession(prevState: unknown, formData: FormData) {
   const dateTime = formData.get('starts_at') as string
@@ -51,7 +52,7 @@ export async function deleteSession(sessionId: string) {
     .eq('status', 'active')
 
   for (const booking of activeBookings ?? []) {
-    await serviceSupabase.rpc('admin_cancel_booking', { p_booking_id: booking.id })
+    await serviceSupabase.rpc('admin_cancel_booking_no_promote', { p_booking_id: booking.id })
   }
 
   const { error } = await serviceSupabase.from('sessions').delete().eq('id', sessionId)
@@ -108,11 +109,54 @@ export async function adminBookGuest(sessionId: string, guestName: string) {
 export async function adminRemoveBooking(bookingId: string) {
   const serviceSupabase = createServiceClient()
 
-  const { error } = await serviceSupabase.rpc('admin_cancel_booking', {
+  // Grab the session before cancelling (booking row survives as 'cancelled')
+  const { data: bookingRow } = await serviceSupabase
+    .from('bookings')
+    .select('session_id')
+    .eq('id', bookingId)
+    .single()
+
+  const { data: promotedUserId, error } = await serviceSupabase.rpc('admin_cancel_booking', {
     p_booking_id: bookingId,
   })
 
   if (error) return { error: 'Stornierung fehlgeschlagen.' }
+
+  if (promotedUserId && bookingRow?.session_id) {
+    await notifyWaitlistPromotion(promotedUserId as string, bookingRow.session_id)
+  }
+
+  revalidatePath('/admin/sessions')
+  revalidatePath('/admin')
+  revalidatePath('/members')
+  return { success: true }
+}
+
+export async function updateSessionMaxParticipants(sessionId: string, prevState: unknown, formData: FormData) {
+  const maxParticipants = Number(formData.get('max_participants'))
+
+  if (!Number.isInteger(maxParticipants) || maxParticipants < 1) {
+    return { error: 'Ungültige Platzanzahl.' }
+  }
+
+  const serviceSupabase = createServiceClient()
+
+  const { count } = await serviceSupabase
+    .from('bookings')
+    .select('id', { count: 'exact', head: true })
+    .eq('session_id', sessionId)
+    .eq('status', 'active')
+
+  if ((count ?? 0) > maxParticipants) {
+    return { error: `Bereits ${count} Plätze belegt.` }
+  }
+
+  const { error } = await serviceSupabase
+    .from('sessions')
+    .update({ max_participants: maxParticipants })
+    .eq('id', sessionId)
+
+  if (error) return { error: 'Platzanzahl konnte nicht gespeichert werden.' }
 
   revalidatePath('/admin/sessions')
   revalidatePath('/admin')

@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { Container } from '@/app/components/Container'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { CancelBookingButton } from './CancelBookingButton'
 
 export const metadata: Metadata = { title: 'Meine Buchungen – Claytopia' }
 
@@ -51,15 +52,21 @@ export default async function MyBookingsPage() {
               <div className="space-y-2">
                 {bookings.map(b => {
                   const session = (b.sessions as unknown) as { starts_at: string } | null
+                  const isUpcoming = session ? new Date(session.starts_at) > new Date() : false
                   return (
                     <div key={b.id}
-                      className={`border border-border rounded-sm p-4 flex justify-between items-center ${b.status === 'cancelled' ? 'opacity-50' : ''}`}>
+                      className={`border border-border rounded-sm p-4 flex justify-between items-center gap-4 ${b.status === 'cancelled' ? 'opacity-50' : ''}`}>
                       <p className="font-medium text-foreground text-sm">
                         {session ? formatDate(session.starts_at) + ' Uhr' : '—'}
                       </p>
-                      <span className={`text-xs px-2 py-0.5 rounded-sm ${b.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-border text-foreground-muted'}`}>
-                        {b.status === 'active' ? 'Aktiv' : 'Storniert'}
-                      </span>
+                      <div className="flex items-center gap-3">
+                        {b.status === 'active' && isUpcoming && session && (
+                          <CancelBookingButton bookingId={b.id} startsAt={session.starts_at} />
+                        )}
+                        <span className={`text-xs px-2 py-0.5 rounded-sm ${b.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-border text-foreground-muted'}`}>
+                          {b.status === 'active' ? 'Aktiv' : 'Storniert'}
+                        </span>
+                      </div>
                     </div>
                   )
                 })}
