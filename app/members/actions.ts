@@ -2,6 +2,51 @@
 
 import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
+import { createTransporter, notificationReceiver } from '@/lib/mail'
+
+async function notifyBooking(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  sessionId: string,
+  user: { id: string; email?: string },
+) {
+  const transporter = createTransporter()
+  if (!transporter) return
+
+  try {
+    const [{ data: session }, { data: profile }] = await Promise.all([
+      supabase.from('sessions').select('starts_at, note').eq('id', sessionId).single(),
+      supabase.from('profiles').select('first_name, last_name').eq('id', user.id).single(),
+    ])
+
+    const name = [profile?.first_name, profile?.last_name].filter(Boolean).join(' ').trim()
+    const participant = name || user.email || 'Unbekannte Teilnehmerin'
+
+    const startsAt = session?.starts_at
+      ? new Intl.DateTimeFormat('de-DE', {
+          dateStyle: 'full',
+          timeStyle: 'short',
+          timeZone: 'Europe/Berlin',
+        }).format(new Date(session.starts_at))
+      : 'unbekannter Termin'
+
+    const note = session?.note ? `\nThema: ${session.note}` : ''
+
+    await transporter.sendMail({
+      from: `"Claytopia Website" <${process.env.SMTP_USER}>`,
+      replyTo: user.email,
+      to: notificationReceiver(),
+      subject: `CLAYTOPIA: Neue Clay-Club-Anmeldung von ${participant}`,
+      text:
+        `${participant} hat sich für eine Clay-Club-Session angemeldet.\n\n` +
+        `Teilnehmerin: ${participant}\n` +
+        `E-Mail: ${user.email ?? 'unbekannt'}\n` +
+        `Termin: ${startsAt}${note}`,
+    })
+  } catch (error) {
+    // Never let a mail failure break the booking itself.
+    console.error('Booking notification mail error:', error)
+  }
+}
 
 export async function bookSession(sessionId: string) {
   const supabase = await createClient()
@@ -31,6 +76,8 @@ export async function bookSession(sessionId: string) {
     if (error.message.includes('fully booked')) return { error: 'Dieser Termin ist leider ausgebucht.' }
     return { error: 'Buchung fehlgeschlagen. Bitte versuche es erneut.' }
   }
+
+  await notifyBooking(supabase, sessionId, user)
 
   revalidatePath('/members')
   return { success: true }

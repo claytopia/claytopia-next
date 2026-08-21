@@ -4,6 +4,7 @@ import { SessionForm } from './SessionForm'
 import { DeleteSessionButton } from './DeleteSessionButton'
 import { EditNoteForm } from './EditNoteForm'
 import { AdminAttendees } from './AdminAttendees'
+import { SessionList } from './SessionList'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = { title: 'Termine – Admin' }
@@ -17,6 +18,8 @@ function formatDate(iso: string) {
 
 export default async function AdminSessionsPage() {
   const supabase = await createClient()
+
+  const now = new Date()
 
   const [{ data: sessions }, { data: profiles }, { data: allCards }] = await Promise.all([
     supabase
@@ -38,7 +41,7 @@ export default async function AdminSessionsPage() {
   const { data: bookings } = sessionIds.length > 0
     ? await supabase
         .from('bookings')
-        .select('id, session_id, user_id')
+        .select('id, session_id, user_id, guest_name')
         .in('session_id', sessionIds)
         .eq('status', 'active')
     : { data: [] }
@@ -47,14 +50,21 @@ export default async function AdminSessionsPage() {
     (profiles ?? []).map(p => [p.id, p])
   )
 
-  type Attendee = { bookingId: string; userId: string; firstName: string; lastName: string }
+  type Attendee = { bookingId: string; userId: string | null; firstName: string; lastName: string; isGuest: boolean }
   const attendeesBySession: Record<string, Attendee[]> = {}
   for (const b of bookings ?? []) {
+    if (b.guest_name) {
+      attendeesBySession[b.session_id] = [
+        ...(attendeesBySession[b.session_id] ?? []),
+        { bookingId: b.id, userId: null, firstName: b.guest_name, lastName: '', isGuest: true },
+      ]
+      continue
+    }
     const p = profileById[b.user_id]
     if (!p) continue
     attendeesBySession[b.session_id] = [
       ...(attendeesBySession[b.session_id] ?? []),
-      { bookingId: b.id, userId: b.user_id, firstName: p.first_name, lastName: p.last_name },
+      { bookingId: b.id, userId: b.user_id, firstName: p.first_name, lastName: p.last_name, isGuest: false },
     ]
   }
 
@@ -81,37 +91,41 @@ export default async function AdminSessionsPage() {
             {!sessions?.length ? (
               <p className="text-foreground-muted">Noch keine Termine angelegt.</p>
             ) : (
-              <div className="space-y-2">
-                {sessions.map(s => {
+              <SessionList
+                items={sessions.map(s => {
                   const sessionAttendees = attendeesBySession[s.id] ?? []
                   const count = sessionAttendees.length
                   const names = sessionAttendees.map(a => a.firstName)
-                  return (
-                    <div key={s.id} className="border border-border rounded-sm p-4">
-                      <div className="flex justify-between items-center gap-4">
-                        <div>
-                          <p className="font-medium text-foreground text-sm">{formatDate(s.starts_at)} Uhr</p>
-                          <p className="text-xs text-foreground-muted mt-0.5">
-                            {count}/{s.max_participants} Plätze
-                          </p>
+                  return {
+                    id: s.id,
+                    isPast: new Date(s.starts_at) < now,
+                    node: (
+                      <div key={s.id} id={`session-${s.id}`} className="border border-border rounded-sm p-4 scroll-mt-24 target:border-primary">
+                        <div className="flex justify-between items-center gap-4">
+                          <div>
+                            <p className="font-medium text-foreground text-sm">{formatDate(s.starts_at)} Uhr</p>
+                            <p className="text-xs text-foreground-muted mt-0.5">
+                              {count}/{s.max_participants} Plätze
+                            </p>
+                          </div>
+                          <DeleteSessionButton
+                            sessionId={s.id}
+                            attendeeCount={count}
+                            attendeeNames={names}
+                          />
                         </div>
-                        <DeleteSessionButton
+                        <AdminAttendees
                           sessionId={s.id}
-                          attendeeCount={count}
-                          attendeeNames={names}
+                          attendees={sessionAttendees}
+                          members={members}
+                          cards={cards}
                         />
+                        <EditNoteForm sessionId={s.id} currentNote={s.note} />
                       </div>
-                      <AdminAttendees
-                        sessionId={s.id}
-                        attendees={sessionAttendees}
-                        members={members}
-                        cards={cards}
-                      />
-                      <EditNoteForm sessionId={s.id} currentNote={s.note} />
-                    </div>
-                  )
+                    ),
+                  }
                 })}
-              </div>
+              />
             )}
           </div>
         </div>

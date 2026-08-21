@@ -10,7 +10,7 @@ import { navItems } from '../config/navigation';
 import { Container } from './Container';
 import { AuthButton } from './AuthButton';
 
-export function MobileMenu({ isLoggedIn }: { isLoggedIn: boolean }) {
+export function MobileMenu({ isLoggedIn, isAdmin }: { isLoggedIn: boolean; isAdmin?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -115,6 +115,28 @@ export function MobileMenu({ isLoggedIn }: { isLoggedIn: boolean }) {
                       Members
                     </Link>
                   </li>
+                )}
+                {isAdmin && (
+                  <>
+                    <li>
+                      <Link
+                        href="/admin/sessions"
+                        onClick={closeMenu}
+                        className="text-2xl font-serif font-medium text-foreground hover:text-primary transition-colors"
+                      >
+                        Sessions verwalten
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/admin/members"
+                        onClick={closeMenu}
+                        className="text-2xl font-serif font-medium text-foreground hover:text-primary transition-colors"
+                      >
+                        Mitglieder verwalten
+                      </Link>
+                    </li>
+                  </>
                 )}
                 <li>
                   <AuthButton

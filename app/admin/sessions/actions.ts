@@ -83,6 +83,28 @@ export async function adminBookMember(sessionId: string, userId: string, cardId:
   return { success: true }
 }
 
+export async function adminBookGuest(sessionId: string, guestName: string) {
+  const name = guestName.trim()
+  if (!name) return { error: 'Name erforderlich.' }
+
+  const serviceSupabase = createServiceClient()
+
+  const { error } = await serviceSupabase.rpc('admin_book_guest', {
+    p_session_id: sessionId,
+    p_guest_name: name,
+  })
+
+  if (error) {
+    if (error.message.includes('fully booked')) return { error: 'Termin ist voll.' }
+    return { error: 'Buchung fehlgeschlagen.' }
+  }
+
+  revalidatePath('/admin/sessions')
+  revalidatePath('/admin')
+  revalidatePath('/members')
+  return { success: true }
+}
+
 export async function adminRemoveBooking(bookingId: string) {
   const serviceSupabase = createServiceClient()
 

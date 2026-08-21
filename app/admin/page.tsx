@@ -53,12 +53,16 @@ export default async function AdminPage() {
               {sessions.map(s => {
                 const count = countBySession[s.id] ?? 0
                 return (
-                  <div key={s.id} className="border border-border rounded-sm p-4 flex justify-between items-center">
+                  <Link
+                    key={s.id}
+                    href={`/admin/sessions#session-${s.id}`}
+                    className="border border-border rounded-sm p-4 flex justify-between items-center hover:border-primary hover:bg-clay-50 transition-colors"
+                  >
                     <span className="font-medium text-foreground text-sm">{formatDate(s.starts_at)} Uhr</span>
                     <span className="text-sm text-foreground-muted">
                       {count} / {s.max_participants} Plätze belegt
                     </span>
-                  </div>
+                  </Link>
                 )
               })}
             </div>

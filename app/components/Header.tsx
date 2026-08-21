@@ -10,6 +10,16 @@ export async function Header() {
   const { data: { user } } = await supabase.auth.getUser()
   const isLoggedIn = !!user
 
+  let isAdmin = false
+  if (user) {
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single()
+    isAdmin = profile?.role === 'admin'
+  }
+
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
       <Container>
@@ -36,12 +46,24 @@ export async function Header() {
                 Members
               </Link>
             )}
+            {isAdmin && (
+              <>
+                <Link href="/admin/sessions"
+                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide">
+                  Sessions verwalten
+                </Link>
+                <Link href="/admin/members"
+                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide">
+                  Mitglieder verwalten
+                </Link>
+              </>
+            )}
             <AuthButton isLoggedIn={isLoggedIn} />
           </nav>
 
           {/* Mobile Navigation */}
           <div className="md:hidden">
-            <MobileMenu isLoggedIn={isLoggedIn} />
+            <MobileMenu isLoggedIn={isLoggedIn} isAdmin={isAdmin} />
           </div>
         </div>
       </Container>

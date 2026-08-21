@@ -1,9 +1,9 @@
 'use client'
 
 import { useTransition, useState } from 'react'
-import { adminBookMember, adminRemoveBooking } from './actions'
+import { adminBookMember, adminBookGuest, adminRemoveBooking } from './actions'
 
-type Attendee = { bookingId: string; userId: string; firstName: string; lastName: string }
+type Attendee = { bookingId: string; userId: string | null; firstName: string; lastName: string; isGuest: boolean }
 type Member = { id: string; firstName: string; lastName: string }
 type Card = { id: string; userId: string; type: string; remaining: number; validUntil: string }
 
@@ -22,8 +22,9 @@ export function AdminAttendees({
   const [error, setError] = useState<string | null>(null)
   const [selectedMember, setSelectedMember] = useState('')
   const [selectedCard, setSelectedCard] = useState('')
+  const [guestName, setGuestName] = useState('')
 
-  const attendeeUserIds = new Set(attendees.map(a => a.userId))
+  const attendeeUserIds = new Set(attendees.map(a => a.userId).filter(Boolean))
   const availableMembers = members.filter(m => !attendeeUserIds.has(m.id))
 
   const memberCards = cards.filter(
@@ -38,6 +39,17 @@ export function AdminAttendees({
       if (result.error) setError(result.error)
       setSelectedMember('')
       setSelectedCard('')
+    })
+  }
+
+  function handleAddGuest() {
+    const name = guestName.trim()
+    if (!name) return
+    setError(null)
+    startTransition(async () => {
+      const result = await adminBookGuest(sessionId, name)
+      if (result.error) setError(result.error)
+      else setGuestName('')
     })
   }
 
@@ -60,6 +72,7 @@ export function AdminAttendees({
               className="inline-flex items-center gap-1 text-xs bg-background-alt text-foreground px-2 py-1 rounded-sm"
             >
               {a.firstName} {a.lastName}
+              {a.isGuest && <span className="text-foreground-muted">(Gast)</span>}
               <button
                 type="button"
                 onClick={() => handleRemove(a.bookingId)}
@@ -112,6 +125,28 @@ export function AdminAttendees({
             className="text-xs text-primary hover:underline disabled:opacity-50"
           >
             Eintragen
+          </button>
+        )}
+      </div>
+
+      {/* Add guest (walk-in / phone booking, no account or card needed) */}
+      <div className="flex items-center gap-2 flex-wrap">
+        <input
+          type="text"
+          value={guestName}
+          onChange={e => setGuestName(e.target.value)}
+          onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); handleAddGuest() } }}
+          placeholder="Gast (Name)…"
+          className="text-xs border border-border rounded-sm px-2 py-1 bg-background"
+        />
+        {guestName.trim() && (
+          <button
+            type="button"
+            onClick={handleAddGuest}
+            disabled={isPending}
+            className="text-xs text-primary hover:underline disabled:opacity-50"
+          >
+            Gast eintragen
           </button>
         )}
       </div>
