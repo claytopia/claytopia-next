@@ -145,8 +145,8 @@ export default function WorkshopsPage() {
               </p>
 
               <div className="pt-6">
-                <a href="mailto:hello@claytopia.de?subject=Interesse am nächsten Themenworkshop" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
-                  Auf die Warteliste
+                <a href="mailto:hello@claytopia.de?subject=Anmeldung Freies Töpfern" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
+                  Jetzt Anfragen
                 </a>
               </div>
             </div>
