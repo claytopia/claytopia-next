@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" role="img" aria-label="Claytopia">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;display=swap');
+      .wordmark {
+        font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+        font-weight: 700;
+        font-size: 110px;
+        letter-spacing: -2.2px;
+        fill: #2E2B27;
+      }
+    </style>
+  </defs>
+  <text class="wordmark" x="10" y="105">Claytopia</text>
+</svg>

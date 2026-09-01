@@ -52,21 +52,16 @@ export default function WorkshopsPage() {
           <div className="space-y-12">
 
           <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
-            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
-               <Image
-                src="/img/about/IMG_1104.jpg"
-                alt="Uhren und Schilder"
-                fill
-                className="object-cover"
-              />
+            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full bg-stone-100">
+              {/* TODO: Bild für diesen Themenworkshop einfügen */}
             </div>
             <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                  <div className="space-y-2">
                    <span className="inline-block uppercase tracking-widest text-xs font-semibold text-primary/80 bg-primary/10 px-3 py-1 rounded-sm">
-                     Themenworkshop
+                     Friday Night Clay
                    </span>
-                   <h3 className="font-serif text-3xl md:text-4xl text-primary">Uhren und Schilder</h3>
+                   <h3 className="font-serif text-3xl md:text-4xl text-primary">Organic Tapas Set</h3>
                  </div>
                  <span className="bg-primary text-white rounded-full w-24 h-24 flex items-center justify-center text-2xl font-bold shadow-md shrink-0">
                    59&nbsp;€
@@ -74,7 +69,7 @@ export default function WorkshopsPage() {
               </div>
 
               <p className="text-lg font-medium text-foreground">
-                12.07.2026 - 14 bis 17 Uhr
+                Fr. 25.09.2026 - 20 bis 23 Uhr
               </p>
 
               <div className="prose prose-lg text-foreground-muted">
@@ -85,7 +80,7 @@ export default function WorkshopsPage() {
               </div>
 
               <div className="pt-6">
-                <a href="mailto:hello@claytopia.de?subject=Anmeldung Uhren und Schilder" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
+                <a href="mailto:hello@claytopia.de?subject=Anmeldung Organic Tapas Set" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
                   Jetzt Anfragen
                 </a>
               </div>
@@ -102,7 +97,7 @@ export default function WorkshopsPage() {
                    <span className="inline-block uppercase tracking-widest text-xs font-semibold text-primary/80 bg-primary/10 px-3 py-1 rounded-sm">
                      Themenworkshop
                    </span>
-                   <h3 className="font-serif text-3xl md:text-4xl text-primary">Thema wird noch bekannt gegeben</h3>
+                   <h3 className="font-serif text-3xl md:text-4xl text-primary">Lieblingstasse</h3>
                  </div>
                  <span className="bg-primary text-white rounded-full w-24 h-24 flex items-center justify-center text-2xl font-bold shadow-md shrink-0">
                    59&nbsp;€
@@ -110,7 +105,43 @@ export default function WorkshopsPage() {
               </div>
 
               <p className="text-lg font-medium text-foreground">
-                11.10.2026 - 14 bis 17 Uhr
+                Sa. 03.10.2026 - 14 bis 17 Uhr
+              </p>
+
+              <div className="prose prose-lg text-foreground-muted">
+                {/* TODO: Workshop-Beschreibung hier einfügen */}
+                <p>
+                  Beschreibung folgt.
+                </p>
+              </div>
+
+              <div className="pt-6">
+                <a href="mailto:hello@claytopia.de?subject=Anmeldung Lieblingstasse" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
+                  Jetzt Anfragen
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
+            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full bg-stone-100">
+              {/* TODO: Bild für diesen Themenworkshop einfügen */}
+            </div>
+            <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                 <div className="space-y-2">
+                   <span className="inline-block uppercase tracking-widest text-xs font-semibold text-primary/80 bg-primary/10 px-3 py-1 rounded-sm">
+                     Themenworkshop
+                   </span>
+                   <h3 className="font-serif text-3xl md:text-4xl text-primary">Freies Töpfern</h3>
+                 </div>
+                 <span className="bg-primary text-white rounded-full w-24 h-24 flex items-center justify-center text-2xl font-bold shadow-md shrink-0">
+                   59&nbsp;€
+                 </span>
+              </div>
+
+              <p className="text-lg font-medium text-foreground">
+                So. 11.10.2026 - 14 bis 17 Uhr
               </p>
 
               <div className="pt-6">
@@ -144,7 +175,7 @@ export default function WorkshopsPage() {
               </div>
 
               <p className="text-lg font-medium text-foreground">
-                22.11.2026 - 14 bis 17 Uhr
+                So. 22.11.2026 - 14 bis 17 Uhr
               </p>
 
               <div className="prose prose-lg text-foreground-muted">
