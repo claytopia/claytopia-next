@@ -148,15 +148,54 @@ export default function WorkshopsPage() {
                 Sa. 07.11.2026 - 14 bis 17 Uhr
               </p>
 
-              <div className="prose prose-lg text-foreground-muted">
-                {/* TODO: Workshop-Beschreibung hier einfügen */}
-                <p>
-                  Beschreibung folgt.
-                </p>
-              </div>
+              <WorkshopDescription
+                summary={
+                  <>
+                    <p>
+                      Du hast Lust, deine eigenen Ideen aus Ton zum Leben zu erwecken? Dann ist dieser Workshop genau das Richtige für dich!
+                    </p>
+                    <p>
+                      An zwei Terminen hast du ganz in Ruhe die Möglichkeit, deine eigenen Keramikstücke zu gestalten – ohne vorgegebene Formen oder ein festes Projekt. Ob Tasse, Schale, Vase, Teller, Kerzenhalter oder etwas ganz anderes: Du entscheidest, was entstehen soll.
+                    </p>
+                  </>
+                }
+                details={
+                  <>
+                    <p className="font-semibold text-foreground">Termin 1 – Formen, was das Zeug hält</p>
+                    <p>
+                      Beim ersten Termin heißt es: Ton in die Hände und los!
+                    </p>
+                    <p>
+                      Wir formen, bauen, drücken, rollen und verzieren – ganz nach deinen Vorstellungen. Ich zeige dir verschiedene Techniken und stehe dir mit Tipps und Unterstützung zur Seite. Du hast eine konkrete Idee? Perfekt! Du weißt noch nicht genau, was du machen möchtest? Auch kein Problem – gemeinsam finden wir heraus, was zu dir passt.
+                    </p>
+                    <p className="font-semibold text-foreground !mt-8">Termin 2 – Farbe ins Spiel bringen</p>
+                    <p>
+                      Nachdem deine Stücke ihren ersten Brand hinter sich haben, geht es beim zweiten Termin ans Glasieren.
+                    </p>
+                    <p>
+                      Hier kannst du deine Keramik ganz individuell gestalten und aus verschiedenen Glasuren und Farben auswählen. Ob schlicht und einfarbig, bunt und verspielt oder mit besonderen Effekten – du entscheidest, wie deine fertigen Stücke aussehen sollen.
+                    </p>
+                    <p>
+                      Zwischen den beiden Terminen kümmere ich mich um den ersten Brand deiner Keramik.
+                    </p>
+                    <p>
+                      Du möchtest nicht nach Vorlage arbeiten, sondern einfach ausprobieren, gestalten und deine eigenen Ideen verwirklichen? Dann komm vorbei und mach Keramik ganz nach deinem Geschmack! 🤍
+                    </p>
+                    <p className="font-medium text-foreground">Keine Vorkenntnisse nötig – All levels welcome!</p>
+                    <p className="font-semibold text-foreground !mt-8">Das ist inklusive</p>
+                    <ul>
+                      <li>zwei Workshoptermine</li>
+                      <li>individuelle Betreuung und Unterstützung</li>
+                      <li>alle Materialien und Werkzeuge</li>
+                      <li>erster und zweiter Brand</li>
+                      <li>individuelle Glasur deiner Keramik</li>
+                    </ul>
+                  </>
+                }
+              />
 
               <div className="pt-6">
-                <a href="mailto:hello@claytopia.de?subject=Anmeldung Lieblingstasse" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
+                <a href="mailto:hello@claytopia.de?subject=Anmeldung Form & Finish" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
                   Jetzt Anfragen
                 </a>
               </div>
@@ -186,30 +225,35 @@ export default function WorkshopsPage() {
 
               <WorkshopDescription
                 summary={
-                  <p>
-                    Tassen, Tassen, Tassen – davon kann man nie genug bekommen und noch schöner ist es, wenn die Lieblingstasse selbst gemacht ist! Dazu hast du in diesem Workshop die Möglichkeit: mit der Plattentechnik (ausgerollte Tonplatten) und verschiedenen „Schnittmustern“ können in diesem Workshop ganz unterschiedliche, individuelle Tassen entstehen. Mit Henkel, ohne Henkel, gemustert, bauchig, verspielt oder ganz schlicht – komm vorbei und mach dir deine Tasse, wie sie dir gefällt!
-                  </p>
+                  <>
+                    <p>
+                      Tassen, Tassen, Tassen – davon kann man nie genug bekommen! ☕️<br />
+                      Und noch schöner ist es, wenn die eigene Lieblingstasse selbst gemacht ist. Genau dazu hast du in diesem Workshop die Möglichkeit!
+                    </p>
+                    <p>
+                      Mit der Plattentechnik (ausgerollten Tonplatten) und verschiedenen „Schnittmustern“ kannst du deine ganz persönliche Tasse gestalten. Mit Henkel oder ohne, gemustert, bauchig, verspielt oder ganz schlicht – deiner Kreativität sind keine Grenzen gesetzt. Komm vorbei und mach dir deine Tasse genau so, wie sie dir gefällt!
+                    </p>
+                  </>
                 }
                 details={
                   <>
                     <p>
-                      Für den Workshop ist erste Erfahrung mit Ton von Vorteil, aber keine Voraussetzung. Mit ein bisschen Mut und Vorstellungskraft werden ALLE ein schönes Ergebnis zaubern.
+                      Erste Erfahrungen mit Ton sind von Vorteil, aber keine Voraussetzung. Mit ein bisschen Mut, Vorstellungskraft und Freude am Ausprobieren zaubern hier wirklich ALLE ihr ganz persönliches Keramikstück.
                     </p>
                     <p>
-                      Nach dem ersten Brand glasiere ich deine Stücke für dich mit einer einfarbigen Glasur nach Wahl.
+                      Nach dem ersten Brand glasiere ich deine Stücke für dich mit einer einfarbigen Glasur deiner Wahl.
                     </p>
                     <p>
-                      Du möchtest deine Stücke lieber selbst glasieren? Wie bei allen meinen Workshops kannst du deine Keramik auch nach deinen eigenen Vorstellungen im Clay Club glasieren – gegen Aufpreis.
+                      Du möchtest deine Stücke lieber selbst glasieren? Kein Problem! Wie bei allen meinen Workshops kannst du deine Keramik auch selbst im Clay Club nach deinen eigenen Vorstellungen glasieren – gegen Aufpreis.
                     </p>
                     <p>
                       ClayClubbies erhalten einen Rabatt – sprich mich einfach darauf an. ;)
                     </p>
                     <p className="font-medium text-foreground">
-                      Das Event findet ab 3 Teilnehmenden statt und ist auf 10 Teilnehmer*innen beschränkt.
+                      Das Event findet ab 3 Teilnehmenden statt und ist auf 10 Teilnehmer*innen begrenzt.
                     </p>
-                    <p className="font-medium text-foreground">All levels welcome!</p>
-                    <p className="font-semibold text-foreground">Das ist inklusive</p>
-                    <p>In der Teilnahmegebühr enthalten sind:</p>
+                    <p className="font-medium text-foreground">All levels welcome! ✨</p>
+                    <p className="font-semibold text-foreground !mt-8">Das ist inklusive</p>
                     <ul>
                       <li>alle Materialien und Werkzeuge</li>
                       <li>beide Brände</li>
@@ -327,12 +371,45 @@ export default function WorkshopsPage() {
                 So. 22.11.2026 - 14 bis 17 Uhr
               </p>
 
-              <div className="prose prose-lg text-foreground-muted">
-                {/* TODO: Workshop-Beschreibung hier einfügen */}
-                <p>
-                  Beschreibung folgt.
-                </p>
-              </div>
+              <WorkshopDescription
+                summary={
+                  <>
+                    <p>
+                      Töpfern für die schönste Zeit des Jahres – willkommen in der Weihnachtswerkstatt! ✨
+                    </p>
+                    <p>
+                      In diesem 3-stündigen Workshop kannst du deine ganz persönlichen Weihnachtsstücke aus Ton gestalten. Ob als selbstgemachtes Geschenk für deine Lieblingsmenschen oder als kleine Keramik-Schätze für dein eigenes Zuhause – hier darf nach Herzenslust ausprobiert und gestaltet werden.
+                    </p>
+                    <p>
+                      Also: Schnapp dir deine Lieblingsmenschen, komm in Weihnachtsstimmung und töpfere schon mal die ersten Geschenke für unter den Weihnachtsbaum.
+                    </p>
+                  </>
+                }
+                details={
+                  <>
+                    <p>
+                      Nach dem Workshop kümmere ich mich um den Rest: Deine fertigen Stücke werden von mir nach dem ersten Brand mit einer einfarbigen Glasur deiner Wahl glasiert und anschließend ein zweites Mal gebrannt.
+                    </p>
+                    <p>
+                      Du möchtest deine Stücke lieber selbst glasieren? Kein Problem! Wie bei allen meinen Workshops kannst du deine Keramik auch selbst im Clay Club nach deinen eigenen Vorstellungen glasieren – gegen Aufpreis.
+                    </p>
+                    <p>
+                      ClayClubbies erhalten einen Rabatt – sprich mich einfach darauf an.
+                    </p>
+                    <p className="font-medium text-foreground">
+                      Das Event findet ab 3 Teilnehmenden statt und ist auf 10 Teilnehmer*innen begrenzt.
+                    </p>
+                    <p className="font-medium text-foreground">Keine Vorkenntnisse nötig – All levels welcome!</p>
+                    <p className="font-semibold text-foreground !mt-8">Das ist inklusive</p>
+                    <ul>
+                      <li>alle Materialien und Werkzeuge</li>
+                      <li>eine große Auswahl an weihnachtlichen Vorlagen und Dekorationen</li>
+                      <li>beide Brände</li>
+                      <li>einfarbige Glasur deiner Wahl, aufgetragen von mir</li>
+                    </ul>
+                  </>
+                }
+              />
 
               <div className="pt-6">
                 <a href="mailto:hello@claytopia.de?subject=Anmeldung Weihnachtswerkstatt" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
