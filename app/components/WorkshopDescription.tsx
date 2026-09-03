@@ -7,7 +7,7 @@ export function WorkshopDescription({
   summary,
   details,
 }: {
-  heading: string;
+  heading?: string;
   summary: ReactNode;
   details?: ReactNode;
 }) {
@@ -16,7 +16,9 @@ export function WorkshopDescription({
   return (
     <div className="space-y-4">
       <div className="prose prose-lg text-foreground-muted">
-        <h4 className="font-serif text-xl text-foreground mb-2">{heading}</h4>
+        {heading && (
+          <h4 className="font-serif text-xl text-foreground mb-2">{heading}</h4>
+        )}
         {summary}
       </div>
 

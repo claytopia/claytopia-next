@@ -94,7 +94,7 @@ export default function WorkshopsPage() {
                     <p>
                       Nach dem ersten Brand glasiere ich deine fertigen Stücke für dich mit einer transparenten Glasur, die den Ton schützt und seine natürliche Optik noch stärker zur Geltung bringt.
                     </p>
-                    <p className="font-semibold text-foreground">Das ist inklusive</p>
+                    <p className="font-semibold text-foreground !mt-8">Das ist inklusive</p>
                     <p>In der Teilnahmegebühr enthalten sind:</p>
                     <ul>
                       <li>alle Materialien</li>
@@ -104,7 +104,7 @@ export default function WorkshopsPage() {
                     <p>
                       Weitere Getränke kannst du vor Ort zum Selbstkostenpreis genießen.
                     </p>
-                    <p>
+                    <p className="!mt-8">
                       Du möchtest deine Stücke lieber selbst glasieren? Wie bei allen meinen Workshops kannst du deine Keramik auch nach deinen eigenen Vorstellungen im Clay Club glasieren – gegen Aufpreis.
                     </p>
                     <p>
@@ -113,6 +113,7 @@ export default function WorkshopsPage() {
                     <p className="font-medium text-foreground">
                       Das Event findet ab 3 Teilnehmenden statt.
                     </p>
+                    <p className="font-medium text-foreground">All levels welcome!</p>
                   </>
                 }
               />
@@ -183,8 +184,43 @@ export default function WorkshopsPage() {
                 So. 11.10.2026 - 14 bis 17 Uhr
               </p>
 
+              <WorkshopDescription
+                summary={
+                  <p>
+                    Tassen, Tassen, Tassen – davon kann man nie genug bekommen und noch schöner ist es, wenn die Lieblingstasse selbst gemacht ist! Dazu hast du in diesem Workshop die Möglichkeit: mit der Plattentechnik (ausgerollte Tonplatten) und verschiedenen „Schnittmustern“ können in diesem Workshop ganz unterschiedliche, individuelle Tassen entstehen. Mit Henkel, ohne Henkel, gemustert, bauchig, verspielt oder ganz schlicht – komm vorbei und mach dir deine Tasse, wie sie dir gefällt!
+                  </p>
+                }
+                details={
+                  <>
+                    <p>
+                      Für den Workshop ist erste Erfahrung mit Ton von Vorteil, aber keine Voraussetzung. Mit ein bisschen Mut und Vorstellungskraft werden ALLE ein schönes Ergebnis zaubern.
+                    </p>
+                    <p>
+                      Nach dem ersten Brand glasiere ich deine Stücke für dich mit einer einfarbigen Glasur nach Wahl.
+                    </p>
+                    <p>
+                      Du möchtest deine Stücke lieber selbst glasieren? Wie bei allen meinen Workshops kannst du deine Keramik auch nach deinen eigenen Vorstellungen im Clay Club glasieren – gegen Aufpreis.
+                    </p>
+                    <p>
+                      ClayClubbies erhalten einen Rabatt – sprich mich einfach darauf an. ;)
+                    </p>
+                    <p className="font-medium text-foreground">
+                      Das Event findet ab 3 Teilnehmenden statt und ist auf 10 Teilnehmer*innen beschränkt.
+                    </p>
+                    <p className="font-medium text-foreground">All levels welcome!</p>
+                    <p className="font-semibold text-foreground">Das ist inklusive</p>
+                    <p>In der Teilnahmegebühr enthalten sind:</p>
+                    <ul>
+                      <li>alle Materialien und Werkzeuge</li>
+                      <li>beide Brände</li>
+                      <li>einfarbige Glasur durch mich</li>
+                    </ul>
+                  </>
+                }
+              />
+
               <div className="pt-6">
-                <a href="mailto:hello@claytopia.de?subject=Anmeldung Freies Töpfern" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
+                <a href="mailto:hello@claytopia.de?subject=Anmeldung Mug Love" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
                   Jetzt Anfragen
                 </a>
               </div>
@@ -233,7 +269,7 @@ export default function WorkshopsPage() {
                     <p>
                       Nach dem ersten Brand glasiere ich deine fertigen Stücke für dich mit einer transparenten Glasur, die den Ton schützt und seine natürliche Optik noch stärker zur Geltung bringt.
                     </p>
-                    <p className="font-semibold text-foreground">Das ist inklusive</p>
+                    <p className="font-semibold text-foreground !mt-8">Das ist inklusive</p>
                     <p>In der Teilnahmegebühr enthalten sind:</p>
                     <ul>
                       <li>alle Materialien</li>
@@ -243,7 +279,7 @@ export default function WorkshopsPage() {
                     <p>
                       Weitere Getränke kannst du vor Ort zum Selbstkostenpreis genießen.
                     </p>
-                    <p>
+                    <p className="!mt-8">
                       Du möchtest deine Stücke lieber selbst glasieren? Wie bei allen meinen Workshops kannst du deine Keramik auch nach deinen eigenen Vorstellungen im Clay Club glasieren – gegen Aufpreis.
                     </p>
                     <p>
@@ -252,6 +288,7 @@ export default function WorkshopsPage() {
                     <p className="font-medium text-foreground">
                       Das Event findet ab 3 Teilnehmenden statt.
                     </p>
+                    <p className="font-medium text-foreground">All levels welcome!</p>
                   </>
                 }
               />
