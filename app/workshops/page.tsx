@@ -99,7 +99,7 @@ export default function WorkshopsPage() {
                     <ul>
                       <li>alle Materialien</li>
                       <li>beide Brände</li>
-                      <li>3 Getränke deiner Wahl</li>
+                      <li>2 Getränke deiner Wahl</li>
                     </ul>
                     <p>
                       Weitere Getränke kannst du vor Ort zum Selbstkostenpreis genießen.
