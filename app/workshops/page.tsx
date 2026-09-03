@@ -102,7 +102,7 @@ export default function WorkshopsPage() {
                       <li>2 Getränke deiner Wahl</li>
                     </ul>
                     <p>
-                      Weitere Getränke kannst du vor Ort zum Selbstkostenpreis genießen.
+                      Weitere Getränke kannst du vor Ort zu einem kleinen Aufpreis genießen.
                     </p>
                     <p className="!mt-8">
                       Du möchtest deine Stücke lieber selbst glasieren? Wie bei allen meinen Workshops kannst du deine Keramik auch nach deinen eigenen Vorstellungen im Clay Club glasieren – gegen Aufpreis.
@@ -321,7 +321,7 @@ export default function WorkshopsPage() {
                       <li>2 Getränke deiner Wahl</li>
                     </ul>
                     <p>
-                      Weitere Getränke kannst du vor Ort zum Selbstkostenpreis genießen.
+                      Weitere Getränke kannst du vor Ort zu einem kleinen Aufpreis genießen.
                     </p>
                     <p className="!mt-8">
                       Du möchtest deine Stücke lieber selbst glasieren? Wie bei allen meinen Workshops kannst du deine Keramik auch nach deinen eigenen Vorstellungen im Clay Club glasieren – gegen Aufpreis.
