@@ -53,8 +53,13 @@ export default function WorkshopsPage() {
           <div className="space-y-12">
 
           <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
-            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full bg-stone-100">
-              {/* TODO: Bild für diesen Themenworkshop einfügen */}
+            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
+               <Image
+                src="/img/workshops/Tapas.jpg"
+                alt="Organic Tapas Set"
+                fill
+                className="object-cover saturate-[0.75]"
+              />
             </div>
             <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
@@ -127,8 +132,13 @@ export default function WorkshopsPage() {
           </div>
 
           <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
-            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full bg-stone-100">
-              {/* TODO: Bild für diesen Themenworkshop einfügen */}
+            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
+               <Image
+                src="/img/workshops/IMG_1628.jpg"
+                alt="Form & Finish"
+                fill
+                className="object-cover saturate-[0.7]"
+              />
             </div>
             <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
@@ -203,8 +213,13 @@ export default function WorkshopsPage() {
           </div>
 
           <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
-            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full bg-stone-100">
-              {/* TODO: Bild für diesen Themenworkshop einfügen */}
+            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
+               <Image
+                src="/img/workshops/Tassenstapel.jpg"
+                alt="Mug Love"
+                fill
+                className="object-cover sepia-[0.3] saturate-[1.2]"
+              />
             </div>
             <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
@@ -272,8 +287,13 @@ export default function WorkshopsPage() {
           </div>
 
           <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
-            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full bg-stone-100">
-              {/* TODO: Bild für diesen Themenworkshop einfügen */}
+            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
+               <Image
+                src="/img/workshops/Kitchen nah.jpg"
+                alt="Little Helpers"
+                fill
+                className="object-cover saturate-[0.65]"
+              />
             </div>
             <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
