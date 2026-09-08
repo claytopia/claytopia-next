@@ -13,7 +13,8 @@ export function DeleteSessionButton({ sessionId, attendeeCount, attendeeNames }:
       const names = attendeeNames.join(', ')
       if (!confirm(`Dieser Termin hat ${attendeeCount} Anmeldung${attendeeCount > 1 ? 'en' : ''} (${names}). Wirklich löschen? Alle Anmeldungen werden storniert.`)) return
     }
-    await deleteSession(sessionId)
+    const result = await deleteSession(sessionId)
+    if (result?.error) alert(result.error)
   }
 
   return (

@@ -55,6 +55,14 @@ export async function deleteSession(sessionId: string) {
     await serviceSupabase.rpc('admin_cancel_booking_no_promote', { p_booking_id: booking.id })
   }
 
+  // Cancelled bookings keep their row. Remove them explicitly so the delete
+  // works even on databases where bookings.session_id still restricts.
+  const { error: bookingsError } = await serviceSupabase
+    .from('bookings')
+    .delete()
+    .eq('session_id', sessionId)
+  if (bookingsError) return { error: 'Buchungen des Termins konnten nicht entfernt werden.' }
+
   const { error } = await serviceSupabase.from('sessions').delete().eq('id', sessionId)
   if (error) return { error: 'Termin konnte nicht gelöscht werden.' }
 
