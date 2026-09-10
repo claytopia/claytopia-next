@@ -100,11 +100,13 @@ export default function WorkshopsPage() {
                       Nach dem ersten Brand glasiere ich deine fertigen Stücke für dich mit einer transparenten Glasur, die den Ton schützt und seine natürliche Optik noch stärker zur Geltung bringt.
                     </p>
                     <p className="font-semibold text-foreground !mt-8">Das ist inklusive</p>
-                    <p>In der Teilnahmegebühr enthalten sind:</p>
                     <ul>
-                      <li>alle Materialien</li>
+                      <li>alle Materialien und Werkzeuge</li>
+                      <li>individuelle Anleitung und Unterstützung</li>
                       <li>beide Brände</li>
-                      <li>2 Getränke deiner Wahl</li>
+                      <li>transparente Glasur durch mich</li>
+                      <li>1 Begrüßungsdrink (mit oder ohne Alkohol)</li>
+                      <li>1 weiteres Getränk deiner Wahl</li>
                     </ul>
                     <p>
                       Weitere Getränke kannst du vor Ort zu einem kleinen Aufpreis genießen.
@@ -134,10 +136,10 @@ export default function WorkshopsPage() {
           <div id="form-und-finish" className="scroll-mt-24 bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
             <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
                <Image
-                src="/img/workshops/IMG_1628.jpg"
+                src="/img/workshops/IMG_2160.jpg"
                 alt="Form & Finish"
                 fill
-                className="object-cover saturate-[0.7]"
+                className="object-cover brightness-[1.1] sepia-[0.25]"
               />
             </div>
             <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
@@ -195,7 +197,7 @@ export default function WorkshopsPage() {
                     <p className="font-semibold text-foreground !mt-8">Das ist inklusive</p>
                     <ul>
                       <li>zwei Workshoptermine</li>
-                      <li>individuelle Betreuung und Unterstützung</li>
+                      <li>individuelle Anleitung und Unterstützung</li>
                       <li>alle Materialien und Werkzeuge</li>
                       <li>erster und zweiter Brand</li>
                       <li>individuelle Glasur deiner Keramik</li>
@@ -271,6 +273,7 @@ export default function WorkshopsPage() {
                     <p className="font-semibold text-foreground !mt-8">Das ist inklusive</p>
                     <ul>
                       <li>alle Materialien und Werkzeuge</li>
+                      <li>individuelle Anleitung und Unterstützung</li>
                       <li>beide Brände</li>
                       <li>einfarbige Glasur durch mich</li>
                     </ul>
@@ -334,11 +337,13 @@ export default function WorkshopsPage() {
                       Nach dem ersten Brand glasiere ich deine fertigen Stücke für dich mit einer transparenten Glasur, die den Ton schützt und seine natürliche Optik noch stärker zur Geltung bringt.
                     </p>
                     <p className="font-semibold text-foreground !mt-8">Das ist inklusive</p>
-                    <p>In der Teilnahmegebühr enthalten sind:</p>
                     <ul>
-                      <li>alle Materialien</li>
+                      <li>alle Materialien und Werkzeuge</li>
+                      <li>individuelle Anleitung und Unterstützung</li>
                       <li>beide Brände</li>
-                      <li>2 Getränke deiner Wahl</li>
+                      <li>transparente Glasur durch mich</li>
+                      <li>1 Begrüßungsdrink (mit oder ohne Alkohol)</li>
+                      <li>1 weiteres Getränk deiner Wahl</li>
                     </ul>
                     <p>
                       Weitere Getränke kannst du vor Ort zu einem kleinen Aufpreis genießen.
@@ -423,6 +428,7 @@ export default function WorkshopsPage() {
                     <p className="font-semibold text-foreground !mt-8">Das ist inklusive</p>
                     <ul>
                       <li>alle Materialien und Werkzeuge</li>
+                      <li>individuelle Anleitung und Unterstützung</li>
                       <li>eine große Auswahl an weihnachtlichen Vorlagen und Dekorationen</li>
                       <li>beide Brände</li>
                       <li>einfarbige Glasur deiner Wahl, aufgetragen von mir</li>
