@@ -52,7 +52,7 @@ export default function WorkshopsPage() {
 
           <div className="space-y-12">
 
-          <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
+          <div id="organic-tapas-set" className="scroll-mt-24 bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
             <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
                <Image
                 src="/img/workshops/Tapas.jpg"
@@ -131,7 +131,7 @@ export default function WorkshopsPage() {
             </div>
           </div>
 
-          <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
+          <div id="form-und-finish" className="scroll-mt-24 bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
             <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
                <Image
                 src="/img/workshops/IMG_1628.jpg"
@@ -212,7 +212,7 @@ export default function WorkshopsPage() {
             </div>
           </div>
 
-          <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
+          <div id="mug-love" className="scroll-mt-24 bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
             <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
                <Image
                 src="/img/workshops/Tassenstapel.jpg"
@@ -286,7 +286,7 @@ export default function WorkshopsPage() {
             </div>
           </div>
 
-          <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
+          <div id="little-helpers" className="scroll-mt-24 bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
             <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
                <Image
                 src="/img/workshops/Kitchen nah.jpg"
@@ -365,7 +365,7 @@ export default function WorkshopsPage() {
             </div>
           </div>
 
-          <div className="bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
+          <div id="weihnachtswerkstatt" className="scroll-mt-24 bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
             <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
                <Image
                 src="/20251116_130246.jpg"
@@ -513,7 +513,7 @@ export default function WorkshopsPage() {
 */}
 
       {/* INDIVIDUAL WORKSHOPS */}
-      <section className="py-20">
+      <section id="individuelle-workshops" className="scroll-mt-24 py-20">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             
