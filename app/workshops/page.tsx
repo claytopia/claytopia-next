@@ -91,7 +91,7 @@ export default function WorkshopsPage() {
                 details={
                   <>
                     <p>
-                      Du kannst 3–5 kleine Schälchen herstellen und sie ganz nach deinen Vorstellungen formen und gestalten. Ob schlicht, organisch oder mit individueller Oberfläche – dir stehen verschiedene Möglichkeiten zur Strukturierung zur Verfügung. Auch Farbe kannst du direkt in dein Design integrieren.
+                      Du kannst eine mittelgroße Servierplatte oder 3–5 kleine Schälchen herstellen und sie ganz nach deinen Vorstellungen formen und gestalten. Ob schlicht, organisch oder mit individueller Oberfläche – dir stehen verschiedene Möglichkeiten zur Strukturierung zur Verfügung. Auch Farbe kannst du direkt in dein Design integrieren.
                     </p>
                     <p>
                       Wir arbeiten mit einem wunderschönen beigefarbenen Ton mit dunklen Pünktchen, der deinen Stücken einen natürlichen, organischen Look verleiht.
@@ -105,8 +105,7 @@ export default function WorkshopsPage() {
                       <li>individuelle Anleitung und Unterstützung</li>
                       <li>beide Brände</li>
                       <li>transparente Glasur durch mich</li>
-                      <li>1 Begrüßungsdrink (mit oder ohne Alkohol)</li>
-                      <li>1 weiteres Getränk deiner Wahl</li>
+                      <li>1 Begrüßungsgetränk + 1 Getränk nach Wahl</li>
                     </ul>
                     <p>
                       Weitere Getränke kannst du vor Ort zu einem kleinen Aufpreis genießen.
@@ -342,8 +341,7 @@ export default function WorkshopsPage() {
                       <li>individuelle Anleitung und Unterstützung</li>
                       <li>beide Brände</li>
                       <li>transparente Glasur durch mich</li>
-                      <li>1 Begrüßungsdrink (mit oder ohne Alkohol)</li>
-                      <li>1 weiteres Getränk deiner Wahl</li>
+                      <li>1 Begrüßungsgetränk + 1 Getränk nach Wahl</li>
                     </ul>
                     <p>
                       Weitere Getränke kannst du vor Ort zu einem kleinen Aufpreis genießen.
