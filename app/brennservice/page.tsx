@@ -194,7 +194,7 @@ export default function BrennservicePage() {
               <span className="font-medium">E-Mail:</span> hello@claytopia.de
             </a>
             <a href="tel:+491718336539" className="hover:text-primary transition-colors flex items-center justify-center gap-2">
-              <span className="font-medium">Telefon:</span> +49 171: 833 6539
+              <span className="font-medium">Telefon:</span> +49 171 833 6539
             </a>
           </div>
         </Container>

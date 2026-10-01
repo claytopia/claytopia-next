@@ -47,4 +47,4 @@ x^x
 Du hast Fragen oder möchtest dich anmelden? Dann melde dich gerne bei mir!
 
 E-Mail: hello@claytopia.de
-Telefon: +49 177 833 6539
+Telefon: +49 171 833 6539
