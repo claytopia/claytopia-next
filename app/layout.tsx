@@ -39,13 +39,25 @@ export default function RootLayout({
           <Footer />
         </div>
         {process.env.NEXT_PUBLIC_UMAMI_URL && process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
-          <Script
+          <>
+            {/* Besuche im Admin-Bereich nicht zählen (auch bei Navigation innerhalb der Seite) */}
+            <Script id="umami-before-send" strategy="beforeInteractive">
+              {`window.umamiBeforeSend = function (type, payload) {
+  var path = location.pathname;
+  try { if (payload && payload.url) path = new URL(payload.url, location.origin).pathname; } catch (e) {}
+  var isAdmin = function (p) { return p === "/admin" || p.indexOf("/admin/") === 0; };
+  return isAdmin(path) || isAdmin(location.pathname) ? false : payload;
+};`}
+            </Script>
+            <Script
             defer
             src={`${process.env.NEXT_PUBLIC_UMAMI_URL}/script.js`}
+            data-before-send="umamiBeforeSend"
             data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
             data-domains="claytopia.de,www.claytopia.de"
             strategy="afterInteractive"
-          />
+            />
+          </>
         )}
       </body>
     </html>
