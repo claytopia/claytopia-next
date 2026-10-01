@@ -120,7 +120,20 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">8. Ihre Rechte</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">8. Webanalyse mit Umami</h2>
+              <p className="text-foreground-muted leading-relaxed">
+                Zur Analyse der Nutzung dieser Website setzen wir das Open-Source-Tool Umami ein, das auf einem
+                von uns betriebenen Server in Deutschland (Hetzner Online GmbH) läuft. Umami verwendet keine
+                Cookies und speichert keine IP-Adressen. Erfasst werden in anonymisierter Form u.&nbsp;a.
+                aufgerufene Seiten, Verweisquelle, Browser, Betriebssystem, Gerätetyp und Land. Eine
+                Identifizierung einzelner Besucher*innen ist nicht möglich; die Daten werden nicht an Dritte
+                weitergegeben. Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung unseres
+                Angebots (Art. 6 Abs. 1 lit. f DSGVO).
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-foreground mb-3">9. Ihre Rechte</h2>
               <p className="text-foreground-muted leading-relaxed mb-4">
                 Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:
               </p>
@@ -141,17 +154,17 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">9. Cookies</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">10. Cookies</h2>
               <p className="text-foreground-muted leading-relaxed">
                 Diese Website verwendet ausschließlich technisch notwendige Cookies für den Betrieb des
                 Mitgliederbereichs (Session-Cookies für die Authentifizierung). Es werden keine Tracking-
-                oder Marketing-Cookies eingesetzt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
+                oder Marketing-Cookies eingesetzt; auch unsere Webanalyse (siehe Abschnitt 8) arbeitet ohne Cookies. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
                 (berechtigtes Interesse am Betrieb der Website).
               </p>
             </section>
 
             <p className="text-sm text-foreground-muted pt-4">
-              Stand: Mai 2026
+              Stand: Oktober 2026
             </p>
           </div>
         </Container>
