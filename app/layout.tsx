@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -37,6 +38,15 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        {process.env.NEXT_PUBLIC_UMAMI_URL && process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+          <Script
+            defer
+            src={`${process.env.NEXT_PUBLIC_UMAMI_URL}/script.js`}
+            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+            data-domains="claytopia.de,www.claytopia.de"
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );
