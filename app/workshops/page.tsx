@@ -55,90 +55,6 @@ export default function WorkshopsPage() {
           {/* Der Workshop "Organic Tapas Set" liegt als Vorlage in
               .planning/workshop-vorlagen/organic-tapas-set.md */}
 
-          <div id="form-und-finish" className="scroll-mt-24 bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
-            <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
-               <Image
-                src="/img/workshops/IMG_2160.jpg"
-                alt="Form & Finish"
-                fill
-                className="object-cover brightness-[1.1] sepia-[0.25]"
-              />
-            </div>
-            <div className="lg:w-3/5 p-8 lg:p-12 space-y-6">
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                 <div className="space-y-2">
-                   <span className="inline-block uppercase tracking-widest text-xs font-semibold text-primary/80 bg-primary/10 px-3 py-1 rounded-sm">
-                     Keramikworkshop
-                   </span>
-                   <h3 className="font-serif text-3xl md:text-4xl text-primary">Form & Finish</h3>
-                 </div>
-                 <span className="bg-primary text-white rounded-full w-24 h-24 flex items-center justify-center text-2xl font-bold shadow-md shrink-0">
-                   119&nbsp;€
-                 </span>
-              </div>
-
-              <p className="text-lg font-medium text-foreground">
-                Sa. 03.10.2026 - 14 bis 17 Uhr<br />
-                Sa. 07.11.2026 - 14 bis 17 Uhr
-              </p>
-
-              <WorkshopDescription
-                summary={
-                  <>
-                    <p>
-                      Du hast Lust, deine eigenen Ideen aus Ton zum Leben zu erwecken? Dann ist dieser Workshop genau das Richtige für dich!
-                    </p>
-                    <p>
-                      An zwei Terminen hast du ganz in Ruhe die Möglichkeit, deine eigenen Keramikstücke zu gestalten – ohne vorgegebene Formen oder ein festes Projekt. Ob Tasse, Schale, Vase, Teller, Kerzenhalter oder etwas ganz anderes: Du entscheidest, was entstehen soll.
-                    </p>
-                  </>
-                }
-                details={
-                  <>
-                    <p className="font-semibold text-foreground">Termin 1 – Formen, was das Zeug hält</p>
-                    <p>
-                      Beim ersten Termin heißt es: Ton in die Hände und los!
-                    </p>
-                    <p>
-                      Wir formen, bauen, drücken, rollen und verzieren – ganz nach deinen Vorstellungen. Ich zeige dir verschiedene Techniken und stehe dir mit Tipps und Unterstützung zur Seite. Du hast eine konkrete Idee? Perfekt! Du weißt noch nicht genau, was du machen möchtest? Auch kein Problem – gemeinsam finden wir heraus, was zu dir passt.
-                    </p>
-                    <p className="font-semibold text-foreground !mt-8">Termin 2 – Farbe ins Spiel bringen</p>
-                    <p>
-                      Nachdem deine Stücke ihren ersten Brand hinter sich haben, geht es beim zweiten Termin ans Glasieren.
-                    </p>
-                    <p>
-                      Hier kannst du deine Keramik ganz individuell gestalten und aus verschiedenen Glasuren und Farben auswählen. Ob schlicht und einfarbig, bunt und verspielt oder mit besonderen Effekten – du entscheidest, wie deine fertigen Stücke aussehen sollen.
-                    </p>
-                    <p>
-                      Zwischen den beiden Terminen kümmere ich mich um den ersten Brand deiner Keramik.
-                    </p>
-                    <p>
-                      Du möchtest nicht nach Vorlage arbeiten, sondern einfach ausprobieren, gestalten und deine eigenen Ideen verwirklichen? Dann komm vorbei und mach Keramik ganz nach deinem Geschmack! 🤍
-                    </p>
-                    <p className="font-medium text-foreground">
-                      Das Event findet ab 4 Teilnehmenden statt und ist auf 10 Teilnehmer*innen begrenzt.
-                    </p>
-                    <p className="font-medium text-foreground">Keine Vorkenntnisse nötig – All levels welcome!</p>
-                    <p className="font-semibold text-foreground !mt-8">Das ist inklusive</p>
-                    <ul>
-                      <li>zwei Workshoptermine</li>
-                      <li>individuelle Anleitung und Unterstützung</li>
-                      <li>alle Materialien und Werkzeuge</li>
-                      <li>erster und zweiter Brand</li>
-                      <li>individuelle Glasur deiner Keramik</li>
-                    </ul>
-                  </>
-                }
-              />
-
-              <div className="pt-6">
-                <a href="mailto:hello@claytopia.de?subject=Anmeldung Form & Finish" className="inline-block bg-primary text-white px-8 py-3 rounded-sm hover:bg-primary/90 transition-colors">
-                  Jetzt Anfragen
-                </a>
-              </div>
-            </div>
-          </div>
-
           <div id="mug-love" className="scroll-mt-24 bg-background rounded-sm shadow-lg ring-1 ring-primary/20 border-t-4 border-primary overflow-hidden flex flex-col lg:flex-row">
             <div className="lg:w-2/5 relative min-h-[300px] lg:min-h-full">
                <Image
@@ -162,7 +78,7 @@ export default function WorkshopsPage() {
               </div>
 
               <p className="text-lg font-medium text-foreground">
-                So. 11.10.2026 - 14 bis 17 Uhr
+                Sa. 07.11.2026 - 14 bis 17 Uhr
               </p>
 
               <WorkshopDescription
