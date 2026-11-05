@@ -226,7 +226,7 @@ export default function WorkshopsPage() {
                 <div className="space-y-4 text-sm text-foreground-muted">
                    <p>
                      <strong>Grundpreis:</strong> 220,- € (3 Personen) <br/>
-                     <strong>Zusatzperson:</strong> + 40 € (max. 10 Personen)
+                     <strong>Zusatzperson:</strong> + 50,- € (max. 10 Personen)
                    </p>
                    <ul className="list-disc pl-5 space-y-1">
                      <li>3 Stunden Workshopzeit &quot;freies Töpfern&quot;</li>
