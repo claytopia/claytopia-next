@@ -6,7 +6,7 @@
 
 npm run dev
 
--> im Browser http://localhost:3000/ eingeben
+-> im Browser eingeben
 
 
 
